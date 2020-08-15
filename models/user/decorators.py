@@ -1,7 +1,7 @@
 import functools
 
 from typing import Callable
-from flask import session, flash, redirect, url_for, request
+from flask import session, flash, redirect, url_for
 
 
 def requires_login(f: Callable) -> Callable:
@@ -10,3 +10,4 @@ def requires_login(f: Callable) -> Callable:
             flash("You need to be signed in for this page.", 'danger')
             return redirect(url_for('users.login'))
         return f(*args, **kwargs)
+    return decorated_function
