@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import pdb
 
 from abc import ABCMeta, abstractmethod
 from typing import List, Dict, Union, Any
@@ -15,7 +16,7 @@ class Model(metaclass=ABCMeta):
     collection: str
     _id: Union[str, ObjectId]
 
-    def __init__(self, *args, _id: Union[str, ObjectId] = None):
+    def __init__(self, _id: Union[str, ObjectId] = None):
         logger.debug("Creating model...")
         logger.debug(f"_id: {_id}")
         self._id = ObjectId(_id) or ObjectId()
@@ -32,13 +33,15 @@ class Model(metaclass=ABCMeta):
 
     @classmethod
     def get_by_id(cls, _id: Union[str, ObjectId]) -> Model:
-        element = cls.find_one_by('_id', _id)
+        element = cls.find_one_by('_id', ObjectId(_id))
         return element
 
     @classmethod
     def all(cls) -> List[Model]:
         logger.debug("all...")
         elements_from_db = Database.find(cls.collection, {})
+        logger.debug(f"elements_from_db: {elements_from_db}")
+
         elements = [cls(**elem) for elem in elements_from_db]
         logger.debug(f"elements: {elements}")
         return elements
