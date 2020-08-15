@@ -18,7 +18,7 @@ def register():
             User.register_user(email, password)
             logger.debug(f"Created user: {User}")
             session['email'] = email
-            return email
+            return redirect(url_for('alerts.index'))
         except UserErrors.UserError as e:
             return e.message
 
@@ -34,7 +34,7 @@ def login():
         try:
             if User.is_login_valid(email, password):
                 session['email'] = email
-                return email
+                return redirect(url_for('alerts.index'))
         except UserErrors.UserError as e:
             return e.message
 
