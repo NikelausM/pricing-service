@@ -2,28 +2,30 @@ from __future__ import annotations
 
 import re
 import requests
+import logging
 
 from bs4 import BeautifulSoup
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Any
 from bson.objectid import ObjectId
+from dataclasses import dataclass, field, InitVar
 
-from common.database import Database
 from models.model import Model
 
+logger = logging.getLogger("pricing-service.models.item")
 
+
+@dataclass(eq=False)
 class Item(Model):
+    collection: str = field(init=False, default='items')
+    url: str
+    tag_name: str
+    query: Dict[str, Any]
+    price: float = field(default=None)
 
-    collection = 'items'
+    _id: InitVar[Union[str, ObjectId]] = field(default=None)
 
-    def __init__(self, url: str, tag_name: str, query: Dict[str, str], _id: Union[str, ObjectId] = None):
+    def __post_init__(self, _id: Union[str, ObjectId] = None):
         super().__init__(_id)
-        self.url = url
-        self.tag_name = tag_name
-        self.query = query
-        self.price = None
-
-    def __repr__(self):
-        return f"<Item {self.url}>"
 
     def load_price(self) -> float:
         response = requests.get(self.url)
@@ -45,5 +47,6 @@ class Item(Model):
             '_id': self._id,
             'url': self.url,
             'tag_name': self.tag_name,
+            'price': self.price,
             'query': self.query
         }
