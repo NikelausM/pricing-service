@@ -12,12 +12,14 @@
                 <p>
                     For URLs starting with {{ store.url_prefix }}.
                 </p>
-                <a href="{{ url_for('stores.edit', store_id=store._id) }}">
-                    <button class="btn btn-secondary">Edit</button>
-                </a>
-                <a href="{{ url_for('stores.delete', store_id=store._id) }}">
-                    <button class="btn btn-danger">Delete</button>
-                </a>
+                {% if session['email'] == config.ADMIN %}
+                    <a href="{{ url_for('stores.edit', store_id=store._id) }}">
+                        <button class="btn btn-secondary">Edit</button>
+                    </a>
+                    <a href="{{ url_for('stores.delete', store_id=store._id) }}">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>
+                {% endif %}
             </div>
         {% endfor %}
     </div>

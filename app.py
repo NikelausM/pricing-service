@@ -1,4 +1,5 @@
 import logging
+import os
 
 from flask import Flask, render_template, request
 
@@ -9,6 +10,9 @@ from common.utils import Utils
 
 app = Flask(__name__)
 app.secret_key = Utils.random_string_generator()
+app.config.update(
+    ADMIN=os.environ.get('ADMIN')
+)
 
 app.register_blueprint(alert_blueprint, url_prefix='/alerts')
 app.register_blueprint(store_blueprint, url_prefix='/stores')

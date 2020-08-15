@@ -4,6 +4,7 @@ import logging
 from flask import Blueprint, render_template, request, redirect, url_for
 
 from models.store import Store
+from models.user import requires_login, requires_admin
 
 logger = logging.getLogger("pricing-service.views.stores")
 
@@ -11,12 +12,14 @@ store_blueprint = Blueprint('stores', __name__)
 
 
 @store_blueprint.route('/')
+@requires_login
 def index():
     stores = Store.all()
     return render_template('stores/index.html', stores=stores)
 
 
 @store_blueprint.route('/new', methods=['GET', 'POST'])
+@requires_admin
 def new():
     if request.method == 'POST':
         name = request.form['name']
@@ -34,6 +37,7 @@ def new():
 
 
 @store_blueprint.route('/edit/<string:store_id>', methods=['GET', 'POST'])
+@requires_admin
 def edit(store_id):
     store = Store.get_by_id(store_id)
 
@@ -57,6 +61,7 @@ def edit(store_id):
 
 
 @store_blueprint.route('/delete/<string:store_id>')
+@requires_admin
 def delete(store_id):
     store = Store.get_by_id(store_id)
     logger.debug(f"deleting store: {store}")
