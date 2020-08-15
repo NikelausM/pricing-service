@@ -6,6 +6,7 @@ from bson.objectid import ObjectId
 
 from models.item import Item
 from models.model import Model
+from models.user import User
 from dataclasses import dataclass, field, InitVar
 
 logger = logging.getLogger("pricing-service.models.alert")
@@ -16,6 +17,7 @@ class Alert(Model):
     collection: str = field(init=False, default='alerts')
     name: str
     price_limit: float
+    user_email: str
     item_id: InitVar[Union[str, ObjectId]]
     _id: InitVar[Union[str, ObjectId]] = field(default=None)
 
@@ -25,12 +27,14 @@ class Alert(Model):
         logger.debug(f"_id: {_id}")
         self.item_id = ObjectId(item_id)
         self.item = Item.get_by_id(item_id)
+        self.user = User.find_by_email(self.user_email)
 
     def json(self) -> Dict[str, Any]:
         return {
             '_id': self._id,
             'name': self.name,
             'price_limit': self.price_limit,
+            'user_email': self.user_email,
             'item_id': self.item_id
         }
 
