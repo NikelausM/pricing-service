@@ -64,6 +64,6 @@ class Model(metaclass=ABCMeta):
         logger.debug(f"attribute: {attribute}")
         logger.debug(f"value: {value}")
         elements = [cls(**elem) for elem
-                    in Database.find_one(cls.collection, {attribute: value})]
+                    in Database.find(cls.collection, {attribute: value})]
         logger.debug(f"elements: {elements}")
         return elements
