@@ -1,7 +1,7 @@
 import json
 import logging
 
-from flask import Blueprint, render_template, request, url_for
+from flask import Blueprint, render_template, request, redirect, url_for
 
 from models.store import Store
 
@@ -27,5 +27,7 @@ def new():
         store = Store(name, url_prefix, tag_name, query)
         logger.debug(f"store: {store}")
         store.save_to_mongo()
+
+        return redirect(url_for('.index'))
 
     return render_template('stores/new.html')
