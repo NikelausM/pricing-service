@@ -1,6 +1,7 @@
 import logging
+import pdb
 
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, url_for
 from models.alert import Alert
 from models.store import Store
 from models.item import Item
@@ -13,6 +14,7 @@ alert_blueprint = Blueprint('alerts', __name__)
 @alert_blueprint.route('/')
 def index():
     alerts = Alert.all()
+    logger.debug(f"alerts: {alerts}")
     return render_template('alerts/index.html', alerts=alerts)
 
 
@@ -33,4 +35,21 @@ def new():
         logger.debug(f"alert: {alert}")
         alert.save_to_mongo()
 
+        return redirect(url_for('.index'))
+
     return render_template('alerts/new.html')
+
+
+@alert_blueprint.route('/edit/<string:alert_id>', methods=['GET', 'POST'])
+def edit(alert_id):
+    alert = Alert.get_by_id(alert_id)
+
+    if request.method == 'POST':
+        price_limit = float(request.form['price_limit'])
+
+        alert.price_limit = price_limit
+        alert.save_to_mongo()
+
+        return redirect(url_for('.index'))
+
+    return render_template('alerts/edit.html', alert=alert)

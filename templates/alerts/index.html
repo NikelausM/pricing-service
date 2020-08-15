@@ -12,6 +12,9 @@
                 <p>
                     <a href="{{ alert.item.url }}">{{ alert.item.url }} (last price <span>{{ alert.item.price }}</span>)</a>
                 </p>
+                <a href="{{ url_for('alerts.edit', alert_id=alert._id) }}">
+                    <button class="btn btn-secondary">Edit</button>
+                </a>
             </div>
         {% endfor %}
     </div>
