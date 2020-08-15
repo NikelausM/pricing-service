@@ -88,19 +88,17 @@ class Store(Model):
     def fix_url_prefix(cls, url) -> str:
         if cls.validate_url_prefix(url):
             return url
-        new_url = cls.fix_pre_url_prefix(url)
-        if new_url != url:
-            logger.debug(f"new_url: {new_url}")
-            return new_url
-        new_url = cls.fix_post_url_prefix(url)
-        if new_url != url:
-            logger.debug(f"new_url: {new_url}")
-            return new_url
-        new_url = cls.fix_pre_and_post_url_prefix(url)
-        if new_url != url:
-            logger.debug(f"new_url: {new_url}")
-            return new_url
-        raise TypeError(f"URL prefix is invalid/unfixable: {url}")
+
+        url_fixes = [cls.fix_pre_url_prefix,
+                     cls.fix_post_url_prefix,
+                     cls.fix_pre_and_post_url_prefix]
+
+        for url_fix in url_fixes:
+            new_url = url_fix(url)
+            if new_url != url:
+                logger.debug(f"new_url: {new_url}")
+                return new_url
+        raise ValueError(f"URL prefix is invalid/unfixable: {url}")
 
     @classmethod
     def get_by_name(cls, store_name: str) -> Store:
