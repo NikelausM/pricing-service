@@ -15,6 +15,9 @@
                 <a href="{{ url_for('alerts.edit', alert_id=alert._id) }}">
                     <button class="btn btn-secondary">Edit</button>
                 </a>
+                <a href="{{ url_for('alerts.delete', alert_id=alert._id) }}">
+                    <button class="btn btn-danger">Delete</button>
+                </a>
             </div>
         {% endfor %}
     </div>
