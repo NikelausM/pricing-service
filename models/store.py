@@ -40,7 +40,7 @@ class Store(Model):
     def validate_url_prefix(cls, url) -> bool:
         logger.debug("validate_url_prefix...")
         logger.debug(f"URL_PREFIX_REGEX: {cls.URL_PREFIX_REGEX}")
-        logger.debug(f"url: {url}")
+        logger.debug(f"url prefix: {url}")
         pattern = re.compile(cls.URL_PREFIX_REGEX)
         match = pattern.search(url)
 
@@ -53,7 +53,7 @@ class Store(Model):
 
     @classmethod
     def fix_pre_url_prefix(cls, url):
-        """Try to fix pre url."""
+        """Try to fix pre url prefix."""
         logger.debug("fix_pre_url_prefix...")
         str_added = "http://"
         url = str_added + url
@@ -63,7 +63,7 @@ class Store(Model):
 
     @classmethod
     def fix_post_url_prefix(cls, url) -> bool:
-        """Try to fix post url."""
+        """Try to fix post url prefix."""
         logger.debug("fix_post_url_prefix...")
         str_added = "/"
         url += str_added
@@ -73,7 +73,7 @@ class Store(Model):
 
     @classmethod
     def fix_pre_and_post_url_prefix(cls, url) -> bool:
-        """Try to fix pre and post url."""
+        """Try to fix pre and post url prefix."""
         logger.debug("fix_pre_and_post_url_prefix...")
         pre_str_added = "http://"
         url = pre_str_added + url
@@ -86,6 +86,7 @@ class Store(Model):
 
     @classmethod
     def fix_url_prefix(cls, url) -> str:
+        """Try to fix url prefix."""
         if cls.validate_url_prefix(url):
             return url
 
