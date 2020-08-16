@@ -1,1 +1,2 @@
-"# pricing-service" 
+# Pricing Service
+This application is still under development...
