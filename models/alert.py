@@ -8,6 +8,7 @@ from models.item import Item
 from models.model import Model
 from models.user import User
 from dataclasses import dataclass, field, InitVar
+from libs.mailgun import Mailgun
 
 logger = logging.getLogger("pricing-service.models.alert")
 
@@ -44,6 +45,16 @@ class Alert(Model):
 
     def notify_if_price_reached(self):
         if self.item.price < self.price_limit:
-            print(f"Item {self.item} has reached a price under {self.price_limit:.2f}." +
-                  f" Latest price: {self.item.price:.2f}.")
+            # print(f"Item {self.item} has reached a price under {self.price_limit:.2f}." +
+            #       f" Latest price: {self.item.price:.2f}.")
+            Mailgun.send_mail(
+                email=[self.user_email],
+                subject=f"Notification for {self.name}",
+                text=f'Your alert for {self.name} has reached a price under {self.price_limit:.2f}.' +
+                     f" The latest price is {self.item.price:.2f}." +
+                     f" Go to this address to check your item: {self.item.url}",
+                html=f'<h>Your alert for {self.name} has reached a price under {self.price_limit:.2f}.</h>' +
+                     f"<p>The latest price is {self.item.price:.2f}.</p>" +
+                     f"<p>Click <a href=\"{self.item.url}\">here</a> to purchase your item.</p>"
+            )
 

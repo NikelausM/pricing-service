@@ -7,12 +7,22 @@ from views.alerts import alert_blueprint
 from views.stores import store_blueprint
 from views.users import user_blueprint
 from common.utils import Utils
+from libs.mailgun import Mailgun
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.secret_key = Utils.random_string_generator()
 app.config.update(
     ADMIN=os.environ.get('ADMIN')
 )
+
+load_dotenv()
+
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
 
 app.register_blueprint(alert_blueprint, url_prefix='/alerts')
 app.register_blueprint(store_blueprint, url_prefix='/stores')
