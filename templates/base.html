@@ -19,23 +19,36 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" href=" {{ url_for('stores.index') }}">
-                            Stores
-                        </a>
-                        <a class="nav-item nav-link" href=" {{ url_for('alerts.index') }}">
-                            Alerts
-                        </a>
-                        <a class="nav-item nav-link" href=" {{ url_for('users.login') }}">
-                            Log in
-                        </a>
-                        <a class="nav-item nav-link" href=" {{ url_for('users.register') }}">
-                            Sign up
-                        </a>
-                        <a class="nav-item nav-link" href=" {{ url_for('users.logout') }}">
-                            Log out
-                        </a>
-                    </div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href=" {{ url_for('stores.index') }}">
+                                Stores
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ url_for('alerts.index') }}">
+                                Alerts
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ url_for('users.login') }}">
+                                Log in
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href=" {{ url_for('users.register') }}">
+                                Sign up
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href=" {{ url_for('users.logout') }}">
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
 
