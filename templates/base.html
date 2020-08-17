@@ -7,12 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
     <title>Price Alerts</title>
 </head>
     <div>
         <div class="container mt-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-                <a class="navbar-brand" href="/">Pricing Service</a>
+                <a class="navbar-brand" href="/"><i class="fas fa-dollar-sign"></i> Pricing Service</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -22,12 +26,12 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item ">
                             <a class="nav-link" href=" {{ url_for('stores.index') }}">
-                                Stores
+                                <i class="fas fa-store"></i> Stores
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href=" {{ url_for('alerts.index') }}">
-                                Alerts
+                                <i class="fas fa-bell"></i> Alerts
                             </a>
                         </li>
                     </ul>
@@ -35,17 +39,17 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href=" {{ url_for('users.login') }}">
-                                Log in
+                                <i class="fas fa-sign-in-alt"></i> Log in
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href=" {{ url_for('users.register') }}">
-                                Sign up
+                                <i class="fas fa-user-plus"></i> Sign up
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href=" {{ url_for('users.logout') }}">
-                                Log out
+                                <i class="fas fa-sign-out-alt"></i> Log out
                             </a>
                         </li>
                     </ul>
