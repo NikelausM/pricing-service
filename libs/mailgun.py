@@ -25,13 +25,13 @@ class Mailgun:
         if cls.MAILGUN_DOMAIN is None:
             raise MailgunException("Failed to load Mailgun domain.")
         response = post(
-            f"https://api.mailgun.net/v3/{cls.MAILGUN_DOMAIN}/messages",
-            auth=("api", cls.MAILGUN_API_KEY),
-            data={"from": f"{cls.FROM_TITLE} <{cls.FROM_EMAIL}>",
-                  "to": email,
-                  "subject": subject,
-                  "text": text,
-                  "html": html})
+            f'https://api.mailgun.net/v3/{cls.MAILGUN_DOMAIN}/messages',
+            auth=('api', cls.MAILGUN_API_KEY),
+            data={'from': f'{cls.FROM_TITLE} <{cls.FROM_EMAIL}>',
+                  'to': email,
+                  'subject': subject,
+                  'text': text,
+                  'html': html})
         if response.status_code != 200:
             raise MailgunException("An error occurred while sending e-mail.")
         return response
