@@ -1,14 +1,13 @@
 import logging
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 from views.alerts import alert_blueprint
 from views.stores import store_blueprint
 from views.users import user_blueprint
 from common.utils import Utils
-from libs.mailgun import Mailgun
-from dotenv import load_dotenv
+from dotenv import load_dotenv  # type: ignore
 
 app = Flask(__name__)
 app.secret_key = Utils.random_string_generator()
