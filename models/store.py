@@ -27,7 +27,7 @@ class Store(Model):
         logger.debug("Creating store...")
         self.url_prefix = self.fix_url_prefix(self.url_prefix)
 
-    def json(self) -> Dict[str: Any]:
+    def json(self) -> Dict[str, Any]:
         return {
             '_id': self._id,
             'name': self.name,
