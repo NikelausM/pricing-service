@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 mypy = "*"
 python-dotenv = "*"
+pylint = "*"
+pycodestyle = "*"
 
 [packages]
 astroid = "==2.4.2"

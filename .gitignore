@@ -5,3 +5,4 @@ logs.txt
 .idea/
 .env
 requirements.txt
+.vscode/
