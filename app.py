@@ -7,6 +7,7 @@ from views.alerts import alert_blueprint
 from views.stores import store_blueprint
 from views.users import user_blueprint
 from common.utils import Utils
+from common.database import Database
 from dotenv import load_dotenv  # type: ignore
 
 app = Flask(__name__)
@@ -16,6 +17,11 @@ app.config.update(
 )
 
 load_dotenv()
+
+
+@app.before_first_request
+def init_db():
+    Database.initialize()
 
 
 @app.route('/')
