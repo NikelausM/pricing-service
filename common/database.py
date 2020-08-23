@@ -41,7 +41,7 @@ class Database:
         except Exception as err:
             raise err
         else:
-            print("Successfuly connected to database.")
+            print("Successfully connected to database.")
 
     @classmethod
     def insert(cls, collection: str, data: Dict) -> None:
