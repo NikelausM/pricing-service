@@ -29,25 +29,29 @@ class User(Model):
         try:
             return cls.find_one_by('email', email)
         except TypeError:
-            raise UserErrors.UserNotFoundError("A user with this e-ail was not found.")
+            raise UserErrors.UserNotFoundError(
+                "A user with this e-mail was not found.")
 
     @classmethod
     def is_login_valid(cls, email: str, password: str) -> bool:
         user = cls.find_by_email(email)
 
         if not Utils.check_hashed_password(password, user.password):
-            raise UserErrors.IncorrectPasswordError('Your password was incorrect')
+            raise UserErrors.IncorrectPasswordError(
+                'Your password was incorrect')
 
         return True
 
     @classmethod
     def register_user(cls, email: str, password: str) -> bool:
         if not Utils.email_is_valid(email):
-            raise UserErrors.InvalidEmailError("The e-mail does nothvae the right format.")
+            raise UserErrors.InvalidEmailError(
+                "The e-mail does nothvae the right format.")
         try:
             user = cls.find_by_email(email)
             logger.debug(f"user already found: {user}")
-            raise UserErrors.UserAlreadyRegisteredError("The e-mail you used to register already exists.")
+            raise UserErrors.UserAlreadyRegisteredError(
+                "The e-mail you used to register already exists.")
         except UserErrors.UserNotFoundError:
             User(email, Utils.hash_password(password)).save_to_mongo()
 
