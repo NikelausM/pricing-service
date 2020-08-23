@@ -20,11 +20,11 @@ class Database:
     BASE_HOST_NAME: str = os.environ['DB_BASE_HOST_NAME']
     DB_NAME: str = os.environ['DB_NAME']
     HOST: str = f'{BASE_HOST_NAME}/{DB_NAME}'
-    PORT: str = os.environ['PORT']
+    PORT: str = os.environ['DB_PORT']
     AUTHORITY: str = f'{USER_INFO}@{HOST}:{PORT}' if PORT else f'{USER_INFO}@{HOST}'
-    SCHEME: str = os.environ['SCHEME']
-    SCHEME_POST_FIX: str = os.environ['SCHEME_POST_FIX']
-    CONNECTION_OPTIONS: str = os.environ['CONNECTION_OPTIONS']
+    SCHEME: str = os.environ['DB_SCHEME']
+    SCHEME_POST_FIX: str = os.environ['DB_SCHEME_POST_FIX']
+    CONNECTION_OPTIONS: str = os.environ['DB_CONNECTION_OPTIONS']
     URI: str = f'{SCHEME}{SCHEME_POST_FIX}://{AUTHORITY}?{CONNECTION_OPTIONS}'
     DATABASE: pymongo.database.Database
 
