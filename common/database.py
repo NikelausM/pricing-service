@@ -31,7 +31,7 @@ class Database:
     @classmethod
     def initialize(cls):
         try:
-            # maxSevSelDelay = 1  # Assume 1ms maximum server selection delay
+            print(f"PORT: {cls.PORT}")
             client = pymongo.MongoClient(
                 Database.URI)
             cls.DATABASE = client.get_database()
