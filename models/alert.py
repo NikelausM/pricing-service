@@ -57,4 +57,3 @@ class Alert(Model):
                      f"<p>The latest price is {self.item.price:.2f}.</p>" +
                      f"<p>Click <a href=\"{self.item.url}\">here</a> to purchase your item.</p>"
             )
-
