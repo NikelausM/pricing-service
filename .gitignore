@@ -4,5 +4,11 @@ __pycache__/
 logs.txt
 .idea/
 .env
+.env.swp
 requirements.txt
 .vscode/
+log/
+logs/
+cron_config/
+socket.sock
+uwsgi.ini
