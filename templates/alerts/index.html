@@ -2,7 +2,7 @@
 
 {% block content %}
 <header>
-    <h1>Alerts</h1>
+    <h1><i class="fas fa-bell"></i> Alerts</h1>
 </header>
 <section>
     <div class="list-group mb-3">
@@ -10,25 +10,27 @@
         <div class="list-group-item">
             <h4 class="list-group-item-heading">
                 <img height="20" width="20" src={{'http://www.google.com/s2/favicons?domain=' + alert.item.url }} />
-                {{ alert.name }}
+                <a href="{{ alert.item.url }}">{{ alert.name }}</a>
             </h4>
             <p>
-                last price: {{ alert.item.price }}
+                Last price: {{ alert.item.price }}
             </p>
-            <p>
-                <a href="{{ alert.item.url }}">{{ alert.item.url }}</a>
-            </p>
+            {% if alert.item.price < alert.price_limit %}
+            <div class="alert alert-success" role="alert">
+                This item is within your price range (less than {{ alert.price_limit }})!
+            </div>
+            {% endif %}
             <a href="{{ url_for('alerts.edit', alert_id=alert._id) }}">
-                <button class="btn btn-secondary">Edit</button>
+                <button class="btn btn-secondary edit">Edit</button>
             </a>
             <a href="{{ url_for('alerts.delete', alert_id=alert._id) }}">
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-danger delete">Delete</button>
             </a>
         </div>
         {% endfor %}
     </div>
     <a href="{{ url_for('alerts.new') }}">
-        <button class="btn btn-primary">
+        <button class="btn btn-primary create">
             Create new
         </button>
     </a>
