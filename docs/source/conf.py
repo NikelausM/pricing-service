@@ -186,4 +186,7 @@ epub_exclude_files = ['search.html']
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
+                       'pymongo': ('https://pymongo.readthedocs.io/en/stable/', None),
+                       'bson': ('https://pymongo.readthedocs.io/en/stable/', None),
+                       'typing': ('https://github.com/python/cpython/blob/3.8/Lib/typing.py', None), }
