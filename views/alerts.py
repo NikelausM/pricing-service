@@ -10,8 +10,9 @@ logger : logging.Logger
 
 import logging
 import pdb
+import requests
 
-from flask import Blueprint, render_template, request, redirect, url_for, session
+from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from werkzeug.wrappers import Response
 from models.alert import Alert
 from models.store import Store
@@ -52,22 +53,34 @@ def new() -> Union[str, Response]:
         The INDEX template if POST method, NEW template otherwise.
     """
     if request.method == 'POST':
-        alert_name = request.form['name']
-        item_url = request.form['item_url']
-        price_limit = float(request.form['price_limit'])
+        try:
+            alert_name = request.form['name']
+            item_url = request.form['item_url']
+            price_limit = float(request.form['price_limit'])
 
-        store = Store.find_by_url(item_url)
-        item = Item(item_url, store.tag_name, store.query)
-        item.load_price()
-        logger.debug(f"item: {item}")
-        item.save_to_mongo()
+            store = Store.find_by_url(item_url)
+            item = Item(item_url, store.tag_name, store.query)
+            item.load_price()
+            logger.debug(f"item: {item}")
+            item.save_to_mongo()
 
-        alert = Alert(alert_name, price_limit,
-                      session['email'], item._id)
-        logger.debug(f"alert: {alert}")
-        alert.save_to_mongo()
+            alert = Alert(alert_name, price_limit,
+                          session['email'], item._id)
+            logger.debug(f"alert: {alert}")
+            alert.save_to_mongo()
 
-        return redirect(url_for('.index'))
+            return redirect(url_for('.index'))
+        except requests.exceptions.RequestException as err:
+            logger.debug(f"Error with Alert NEW POST request: {err}")
+            flash(
+                "Sorry, there was an issue connecting to that website!" +
+                " Try again later, or try another website.", 'danger')
+        except Exception as err:
+            logger.debug(f"Error with Alert NEW POST request: {err}")
+            flash(
+                "There was problem creating your Alert, please check your form input again.",
+                'danger')
+        return redirect(url_for('.new'))
 
     return render_template('alerts/new.html')
 

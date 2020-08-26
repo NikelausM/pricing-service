@@ -13,6 +13,7 @@ def requires_login(f: Callable) -> Callable:
         return f(*args, **kwargs)
     return decorated_function
 
+
 def requires_admin(f: Callable) -> Callable:
     @functools.wraps(f)
     def decorated_function(*args, **kwargs):

@@ -76,15 +76,26 @@ class Item(Model):
             The item price.
 
         """
+        logger.debug("load_price...")
+        logger.debug(f"self.url: {self.url}")
         response = requests.get(self.url)
         content = response.content
         soup = BeautifulSoup(content, 'html.parser')
+        logger.debug("soup.find(self.tag_name, self.query)....")
+        logger.debug(f"self.tag_name: {self.tag_name}")
+        logger.debug(f"self.query: {self.query}")
         element = soup.find(self.tag_name, self.query)
-        string_price = element.text.strip()
+        logger.debug(f"element: {element}")
 
-        pattern = re.compile(r"(\d+,?\d+\.\d+)")
+        string_price = element.text.strip()
+        logger.debug(f"string_price: {string_price}")
+
+        # pattern = re.compile(r"(\d+,?\d+\.\d+)")
+        pattern = re.compile(r"(\d+,?\d*\.*\d+)")
         match = pattern.search(string_price)
+        logger.debug(f"match: {match}")
         found_price = match.group(1)  # type: ignore
+        logger.debug(f"found_price: {found_price}")
         without_commas = found_price.replace(",", "")
         self.price = float(without_commas)
 
