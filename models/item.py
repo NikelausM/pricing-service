@@ -81,6 +81,7 @@ class Item(Model):
         response = requests.get(self.url)
         content = response.content
         soup = BeautifulSoup(content, 'html.parser')
+        logger.debug(f"soup.prettify(): {soup.prettify()}")
         logger.debug("soup.find(self.tag_name, self.query)....")
         logger.debug(f"self.tag_name: {self.tag_name}")
         logger.debug(f"self.query: {self.query}")
