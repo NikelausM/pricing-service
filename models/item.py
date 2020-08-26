@@ -1,3 +1,13 @@
+"""
+This module contains the Item :class:`.Model` class.
+
+Attributes
+----------
+logger : logging.Logger
+    The logger used to log information of module.
+
+"""
+
 from __future__ import annotations
 
 import re
@@ -16,6 +26,26 @@ logger = logging.getLogger("pricing-service.models.item")
 
 @dataclass(eq=False)
 class Item(Model):
+    """
+    Class that models an item.
+
+    Attributes
+    ----------
+    collection : str
+        The database collection name of the Item class.
+    url : str
+        The `URL <https://en.wikipedia.org/wiki/URL>`_ of the webpage on which the item is found.
+    tag_name : str
+        The tag for the item.
+    query : str
+        The `CSS selector <https://en.wikipedia.org/wiki/Cascading_Style_Sheets#Selector>`_
+        used to find the item.
+    price : float
+        The maximum desired price for the item.
+    _id : InitVar[Union[str, ObjectId]]
+        The id of the item.
+
+    """
     collection: str = field(init=False, default='items')
     url: str
     tag_name: str
@@ -25,9 +55,27 @@ class Item(Model):
     _id: InitVar[Union[str, ObjectId]] = field(default=None)
 
     def __post_init__(self, _id: Union[str, ObjectId] = None):
+        """
+        The post-init processing function.
+
+        Parameters
+        ----------
+        _id : InitVar[Union[str, ObjectId]]
+            The id of the item.
+
+        """
         super().__init__(_id)
 
     def load_price(self) -> float:
+        """
+        Requests the items webpage, then parses it for the item price, and returns the price.
+
+        Returns
+        -------
+        float
+            The item price.
+
+        """
         response = requests.get(self.url)
         content = response.content
         soup = BeautifulSoup(content, 'html.parser')
@@ -36,13 +84,22 @@ class Item(Model):
 
         pattern = re.compile(r"(\d+,?\d+\.\d+)")
         match = pattern.search(string_price)
-        found_price = match.group(1)
+        found_price = match.group(1)  # type: ignore
         without_commas = found_price.replace(",", "")
         self.price = float(without_commas)
 
         return self.price
 
-    def json(self) -> Dict:
+    def json(self) -> dict:
+        """
+        Returns the json representation of the item.
+
+        Returns
+        -------
+        str
+            The json representation of the item.
+
+        """
         return {
             '_id': self._id,
             'url': self.url,

@@ -12,13 +12,12 @@ logger : logging.Logger
     The logger used to log information of module.
 
 """
-
+import typing
 import pymongo
 import logging
 import json
 import os
 
-from typing import Dict
 from urllib.parse import quote
 from dotenv import load_dotenv  # type: ignore
 
@@ -98,7 +97,7 @@ class Database:
             print("Successfully connected to database.")
 
     @classmethod
-    def insert(cls, collection: str, data: Dict) -> None:
+    def insert(cls, collection: str, data: dict) -> None:
         """
         Insert document into a database collection.
 
@@ -106,7 +105,7 @@ class Database:
         ----------
         collection : str
             The collection for document to be inserted into.
-        data : Dict
+        data : dict
             The document to be inserted into the collection.
 
         """
@@ -116,7 +115,7 @@ class Database:
         cls.DATABASE[collection].insert(data)
 
     @classmethod
-    def find(cls, collection: str, query: Dict) -> pymongo.cursor:
+    def find(cls, collection: str, query: dict) -> pymongo.cursor.Cursor:
         """
         Filters a collection with a query to find all matching documents.
 
@@ -124,12 +123,12 @@ class Database:
         ----------
         collection : str
             The collection to be queried.
-        query : Dict
+        query : dict
             The query to filter the collection with.
 
         Returns
         -------
-        pymongo.cursor
+        pymongo.cursor.Cursor
             The cursor corresponding to the query.
 
         """
@@ -141,7 +140,7 @@ class Database:
         return result
 
     @classmethod
-    def find_one(cls, collection: str, query: Dict) -> pymongo.cursor:
+    def find_one(cls, collection: str, query: dict) -> pymongo.cursor.Cursor:
         """
         Filters a collection with a query to find matching a document.
 
@@ -149,12 +148,12 @@ class Database:
         ----------
         collection : str
             The collection to be queried.
-        query : Dict
+        query : dict
             The query to filter the collection with.
 
         Returns
         -------
-        pymongo.cursor
+        pymongo.cursor.Cursor
             Cursor corresponding to the query.
 
         """
@@ -166,7 +165,7 @@ class Database:
         return result
 
     @classmethod
-    def update(cls, collection: str, query: Dict, data: Dict) -> None:
+    def update(cls, collection: str, query: dict, data: dict) -> None:
         """
         Filters a collection with a query to update a matching document.
 
@@ -174,9 +173,9 @@ class Database:
         ----------
         collection : str
             The collection to be queried.
-        query : Dict
+        query : dict
             The query to filter the collection with.
-        data : Dict
+        data : dict
             The document to be updated.
 
         """
@@ -189,7 +188,7 @@ class Database:
         cls.DATABASE[collection].update(query, data, upsert=True)
 
     @classmethod
-    def remove(cls, collection: str, query: Dict) -> Dict:
+    def remove(cls, collection: str, query: dict) -> dict:
         """
         Filters a collection with a query to remove a matching document.
 
@@ -197,12 +196,12 @@ class Database:
         ----------
         collection : str
             The collection to be queried.
-        query : Dict
+        query : dict
             The query to filter the collection with.
 
         Returns
         -------
-        pymongo.cursor
+        pymongo.cursor.Cursor
             Cursor corresponding to the query.
 
         """

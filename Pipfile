@@ -46,6 +46,7 @@ uwsgi = "*"
 dnspython = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
+sphinx-autodoc-typehints = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,3 +1,12 @@
+"""
+This module handles the routes corresponding to the :class:`models.user.user.User` model.
+
+Attributes
+----------
+logger : logging.Logger
+    The logger used to log information of module.
+
+"""
 import logging
 
 from flask import Blueprint, request, session, url_for, render_template, redirect
@@ -10,6 +19,20 @@ user_blueprint = Blueprint('users', __name__)
 
 @user_blueprint.route('/register', methods=['GET', 'POST'])
 def register():
+    """
+    Handles the RESTful NEW (GET method) and CREATE (POST method) routes.
+
+    Returns
+    -------
+    str
+        The Alerts INDEX template if POST method, Users REGISTER template otherwise.
+
+    Raises
+    ------
+    UserErrors.UserError
+        If the user couldn't be created.
+
+    """
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
@@ -27,6 +50,20 @@ def register():
 
 @user_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    Handles the Log in route.
+
+    Returns
+    -------
+    str
+        The Users LOGIN template if POST method, Alerts INDEX template otherwise.
+
+    Raises
+    ------
+    UserErrors.UserError
+        If the user couldn't be created.
+
+    """
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
@@ -43,5 +80,14 @@ def login():
 
 @user_blueprint.route('/logout')
 def logout():
+    """
+    Handles the Log out route.
+
+    Returns
+    -------
+    Response
+        Redirects to the login route.
+
+    """
     session['email'] = None
     return redirect('login')
