@@ -21,7 +21,7 @@ Database.initialize()
 
 logger.debug("Sending alerts...")
 
-alerts = Alert.all()
+alerts: = Alert.all()
 
 for alert in alerts:
     if alert.user_email == "jnickm@gmail.com":

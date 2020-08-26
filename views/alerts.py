@@ -59,6 +59,7 @@ def new() -> Union[str, Response]:
             price_limit = float(request.form['price_limit'])
 
             store = Store.find_by_url(item_url)
+
             item = Item(item_url, store.tag_name, store.query)
             item.load_price()
             logger.debug(f"item: {item}")
@@ -68,6 +69,8 @@ def new() -> Union[str, Response]:
                           session['email'], item._id)
             logger.debug(f"alert: {alert}")
             alert.save_to_mongo()
+
+            alert.notify_if_price_reached()
 
             return redirect(url_for('.index'))
         except requests.exceptions.RequestException as err:
@@ -107,7 +110,12 @@ def edit(alert_id: str) -> Union[str, Response]:
         price_limit = float(request.form['price_limit'])
 
         alert.price_limit = price_limit
+
+        alert.load_item_price()
+
         alert.save_to_mongo()
+
+        alert.notify_if_price_reached()
 
         return redirect(url_for('.index'))
 

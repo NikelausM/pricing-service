@@ -1,0 +1,20 @@
+.create::before {
+    content: "\f067";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin: 0 10px 0 0;
+}
+
+.edit::before {
+    content: "\f044";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin: 0 10px 0 0;
+}
+
+.delete::before {
+    content: "\f2ed";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin: 0 10px 0 0;
+}
