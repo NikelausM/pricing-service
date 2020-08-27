@@ -176,6 +176,12 @@
 <h2 id="_">_</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs.html#libs.emailer.Email._ENCRYPTION">_ENCRYPTION (libs.emailer.Email attribute)</a>
+</li>
+      <li><a href="libs.html#libs.emailer.Email._FROM_EMAIL">_FROM_EMAIL (libs.emailer.Email attribute)</a>
+</li>
+      <li><a href="libs.html#libs.emailer.Email._FROM_PASSWORD">_FROM_PASSWORD (libs.emailer.Email attribute)</a>
+</li>
       <li><a href="models.html#models.alert.Alert._id">_id (models.alert.Alert attribute)</a>
 
       <ul>
@@ -185,7 +191,15 @@
 </li>
         <li><a href="models.html#models.store.Store._id">(models.store.Store attribute)</a>
 </li>
+        <li><a href="models.user.html#models.user.user.User._id">(models.user.user.User attribute)</a>
+</li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs.html#libs.emailer.Email._PORT">_PORT (libs.emailer.Email attribute)</a>
+</li>
+      <li><a href="libs.html#libs.emailer.Email._SMTP_SERVER">_SMTP_SERVER (libs.emailer.Email attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -232,11 +246,9 @@
 </li>
         <li><a href="models.html#id13">(models.store.Store attribute)</a>, <a href="models.html#models.store.Store.collection">[1]</a>
 </li>
-        <li><a href="models.user.html#models.user.user.User.collection">(models.user.user.User attribute)</a>
+        <li><a href="models.user.html#id0">(models.user.user.User attribute)</a>, <a href="models.user.html#models.user.user.User.collection">[1]</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     common
 
@@ -251,6 +263,8 @@
         <li><a href="common.html#module-common.database">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     common.utils
 
@@ -260,6 +274,34 @@
       </ul></li>
       <li><a href="common.html#common.database.Database.CONNECTION_OPTIONS">CONNECTION_OPTIONS (common.database.Database attribute)</a>, <a href="common.html#id4">[1]</a>
 </li>
+      <li>
+    controllers
+
+      <ul>
+        <li><a href="controllers.html#module-controllers">module</a>
+</li>
+      </ul></li>
+      <li>
+    controllers.alerts
+
+      <ul>
+        <li><a href="controllers.html#module-controllers.alerts">module</a>
+</li>
+      </ul></li>
+      <li>
+    controllers.stores
+
+      <ul>
+        <li><a href="controllers.html#module-controllers.stores">module</a>
+</li>
+      </ul></li>
+      <li>
+    controllers.users
+
+      <ul>
+        <li><a href="controllers.html#module-controllers.users">module</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -278,10 +320,10 @@
 </li>
       <li><a href="common.html#common.database.Database.DB_USERNAME">DB_USERNAME (common.database.Database attribute)</a>, <a href="common.html#id8">[1]</a>
 </li>
-      <li><a href="views.html#views.alerts.delete">delete() (in module views.alerts)</a>
+      <li><a href="controllers.html#controllers.alerts.delete">delete() (in module controllers.alerts)</a>
 
       <ul>
-        <li><a href="views.html#views.stores.delete">(in module views.stores)</a>
+        <li><a href="controllers.html#controllers.stores.delete">(in module controllers.stores)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -290,17 +332,25 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="views.html#views.alerts.edit">edit() (in module views.alerts)</a>
+      <li><a href="controllers.html#controllers.alerts.edit">edit() (in module controllers.alerts)</a>
 
       <ul>
-        <li><a href="views.html#views.stores.edit">(in module views.stores)</a>
+        <li><a href="controllers.html#controllers.stores.edit">(in module controllers.stores)</a>
+</li>
+        <li><a href="controllers.html#controllers.users.edit">(in module controllers.users)</a>
 </li>
       </ul></li>
+      <li><a href="libs.html#libs.emailer.Email">Email (class in libs.emailer)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="models.user.html#models.user.user.User.email">email (models.user.user.User attribute)</a>
+      <li><a href="models.user.html#id1">email (models.user.user.User attribute)</a>, <a href="models.user.html#models.user.user.User.email">[1]</a>
 </li>
       <li><a href="common.html#common.utils.Utils.email_is_valid">email_is_valid() (common.utils.Utils static method)</a>
+</li>
+      <li><a href="libs.html#libs.emailer.EmailException">EmailException</a>
+</li>
+      <li><a href="libs.html#libs.emailer.Encryption">Encryption (class in libs.emailer)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -330,10 +380,14 @@
 </li>
       <li><a href="models.html#models.store.Store.fix_url_prefix">fix_url_prefix() (models.store.Store class method)</a>
 </li>
-      <li><a href="libs.html#id1">FROM_EMAIL (libs.mailgun.Mailgun attribute)</a>, <a href="libs.html#libs.mailgun.Mailgun.FROM_EMAIL">[1]</a>
+      <li><a href="libs.html#id6">FROM_EMAIL (libs.mailgun.Mailgun attribute)</a>, <a href="libs.html#libs.mailgun.Mailgun.FROM_EMAIL">[1]</a>
 </li>
-      <li><a href="libs.html#id2">FROM_TITLE (libs.mailgun.Mailgun attribute)</a>, <a href="libs.html#libs.mailgun.Mailgun.FROM_TITLE">[1]</a>
+      <li><a href="libs.html#id0">FROM_TITLE (libs.emailer.Email attribute)</a>, <a href="libs.html#libs.emailer.Email.FROM_TITLE">[1]</a>
+
+      <ul>
+        <li><a href="libs.html#id7">(libs.mailgun.Mailgun attribute)</a>, <a href="libs.html#libs.mailgun.Mailgun.FROM_TITLE">[1]</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -370,10 +424,10 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="models.user.html#models.user.errors.IncorrectPasswordError">IncorrectPasswordError</a>
 </li>
-      <li><a href="views.html#views.alerts.index">index() (in module views.alerts)</a>
+      <li><a href="controllers.html#controllers.alerts.index">index() (in module controllers.alerts)</a>
 
       <ul>
-        <li><a href="views.html#views.stores.index">(in module views.stores)</a>
+        <li><a href="controllers.html#controllers.stores.index">(in module controllers.stores)</a>
 </li>
       </ul></li>
       <li><a href="app.html#app.init_db">init_db() (in module app)</a>
@@ -426,6 +480,13 @@
 </li>
       </ul></li>
       <li>
+    libs.emailer
+
+      <ul>
+        <li><a href="libs.html#module-libs.emailer">module</a>
+</li>
+      </ul></li>
+      <li>
     libs.mailgun
 
       <ul>
@@ -439,6 +500,14 @@
       <li><a href="common.html#common.database.logger">logger (in module common.database)</a>
 
       <ul>
+        <li><a href="controllers.html#controllers.alerts.logger">(in module controllers.alerts)</a>
+</li>
+        <li><a href="controllers.html#controllers.stores.logger">(in module controllers.stores)</a>
+</li>
+        <li><a href="controllers.html#controllers.users.logger">(in module controllers.users)</a>
+</li>
+        <li><a href="libs.html#libs.emailer.logger">(in module libs.emailer)</a>
+</li>
         <li><a href="models.html#models.alert.logger">(in module models.alert)</a>
 </li>
         <li><a href="models.html#models.item.logger">(in module models.item)</a>
@@ -447,18 +516,14 @@
 </li>
         <li><a href="models.html#models.store.logger">(in module models.store)</a>
 </li>
-        <li><a href="views.html#views.alerts.logger">(in module views.alerts)</a>
-</li>
-        <li><a href="views.html#views.stores.logger">(in module views.stores)</a>
-</li>
-        <li><a href="views.html#views.users.logger">(in module views.users)</a>
+        <li><a href="models.user.html#models.user.user.logger">(in module models.user.user)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="views.html#views.users.login">login() (in module views.users)</a>
+      <li><a href="controllers.html#controllers.users.login">login() (in module controllers.users)</a>
 </li>
-      <li><a href="views.html#views.users.logout">logout() (in module views.users)</a>
+      <li><a href="controllers.html#controllers.users.logout">logout() (in module controllers.users)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -468,14 +533,18 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs.html#libs.mailgun.Mailgun">Mailgun (class in libs.mailgun)</a>
 </li>
-      <li><a href="libs.html#id0">MAILGUN_API_KEY (libs.mailgun.Mailgun attribute)</a>, <a href="libs.html#id3">[1]</a>, <a href="libs.html#libs.mailgun.Mailgun.MAILGUN_API_KEY">[2]</a>
+      <li><a href="libs.html#id5">MAILGUN_API_KEY (libs.mailgun.Mailgun attribute)</a>, <a href="libs.html#id8">[1]</a>, <a href="libs.html#libs.mailgun.Mailgun.MAILGUN_API_KEY">[2]</a>
 </li>
       <li><a href="libs.html#libs.mailgun.Mailgun.MAILGUN_DOMAIN">MAILGUN_DOMAIN (libs.mailgun.Mailgun attribute)</a>
 </li>
       <li><a href="libs.html#libs.mailgun.MailgunException">MailgunException</a>
 </li>
-      <li><a href="libs.html#libs.mailgun.MailgunException.message">message (libs.mailgun.MailgunException attribute)</a>
+      <li><a href="libs.html#libs.emailer.EmailException.message">message (libs.emailer.EmailException attribute)</a>
+
+      <ul>
+        <li><a href="libs.html#libs.mailgun.MailgunException.message">(libs.mailgun.MailgunException attribute)</a>
 </li>
+      </ul></li>
       <li><a href="models.html#models.model.Model">Model (class in models.model)</a>
 </li>
       <li>
@@ -555,7 +624,17 @@
 </li>
         <li><a href="common.html#module-common.utils">common.utils</a>
 </li>
+        <li><a href="controllers.html#module-controllers">controllers</a>
+</li>
+        <li><a href="controllers.html#module-controllers.alerts">controllers.alerts</a>
+</li>
+        <li><a href="controllers.html#module-controllers.stores">controllers.stores</a>
+</li>
+        <li><a href="controllers.html#module-controllers.users">controllers.users</a>
+</li>
         <li><a href="libs.html#module-libs">libs</a>
+</li>
+        <li><a href="libs.html#module-libs.emailer">libs.emailer</a>
 </li>
         <li><a href="libs.html#module-libs.mailgun">libs.mailgun</a>
 </li>
@@ -579,14 +658,6 @@
 </li>
         <li><a href="templates.html#module-templates">templates</a>
 </li>
-        <li><a href="views.html#module-views">views</a>
-</li>
-        <li><a href="views.html#module-views.alerts">views.alerts</a>
-</li>
-        <li><a href="views.html#module-views.stores">views.stores</a>
-</li>
-        <li><a href="views.html#module-views.users">views.users</a>
-</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -602,10 +673,10 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="views.html#views.alerts.new">new() (in module views.alerts)</a>
+      <li><a href="controllers.html#controllers.alerts.new">new() (in module controllers.alerts)</a>
 
       <ul>
-        <li><a href="views.html#views.stores.new">(in module views.stores)</a>
+        <li><a href="controllers.html#controllers.stores.new">(in module controllers.stores)</a>
 </li>
       </ul></li>
       <li><a href="models.html#models.alert.Alert.notify_if_price_reached">notify_if_price_reached() (models.alert.Alert method)</a>
@@ -616,12 +687,14 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="models.user.html#models.user.user.User.password">password (models.user.user.User attribute)</a>
+      <li><a href="models.user.html#id2">password (models.user.user.User attribute)</a>, <a href="models.user.html#models.user.user.User.password">[1]</a>
 </li>
-      <li><a href="common.html#common.database.Database.PORT">PORT (common.database.Database attribute)</a>, <a href="common.html#id10">[1]</a>
+      <li><a href="libs.html#libs.emailer.Port">Port (class in libs.emailer)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="common.html#common.database.Database.PORT">PORT (common.database.Database attribute)</a>, <a href="common.html#id10">[1]</a>
+</li>
       <li><a href="models.html#id6">price (models.item.Item attribute)</a>, <a href="models.html#models.item.Item.price">[1]</a>
 </li>
       <li><a href="models.html#id3">price_limit (models.alert.Alert attribute)</a>, <a href="models.html#models.alert.Alert.price_limit">[1]</a>
@@ -646,7 +719,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="common.html#common.utils.Utils.random_string_generator">random_string_generator() (common.utils.Utils static method)</a>
 </li>
-      <li><a href="views.html#views.users.register">register() (in module views.users)</a>
+      <li><a href="controllers.html#controllers.users.register">register() (in module controllers.users)</a>
 </li>
       <li><a href="models.user.html#models.user.user.User.register_user">register_user() (models.user.user.User class method)</a>
 </li>
@@ -670,12 +743,22 @@
 </li>
       <li><a href="common.html#common.database.Database.SCHEME">SCHEME (common.database.Database attribute)</a>, <a href="common.html#id11">[1]</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="common.html#common.database.Database.SCHEME_POST_FIX">SCHEME_POST_FIX (common.database.Database attribute)</a>, <a href="common.html#id12">[1]</a>
 </li>
-      <li><a href="libs.html#libs.mailgun.Mailgun.send_mail">send_mail() (libs.mailgun.Mailgun class method)</a>
+      <li><a href="libs.html#libs.emailer.Email.send_mail">send_mail() (libs.emailer.Email class method)</a>
+
+      <ul>
+        <li><a href="libs.html#libs.mailgun.Mailgun.send_mail">(libs.mailgun.Mailgun class method)</a>
 </li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs.html#id1">SSL (libs.emailer.Encryption attribute)</a>, <a href="libs.html#libs.emailer.Encryption.SSL">[1]</a>
+
+      <ul>
+        <li><a href="libs.html#id3">(libs.emailer.Port attribute)</a>, <a href="libs.html#libs.emailer.Port.SSL">[1]</a>
+</li>
+      </ul></li>
       <li><a href="models.html#models.store.Store">Store (class in models.store)</a>
 </li>
   </ul></td>
@@ -690,13 +773,19 @@
         <li><a href="models.html#id16">(models.store.Store attribute)</a>, <a href="models.html#models.store.Store.tag_name">[1]</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     templates
 
       <ul>
         <li><a href="templates.html#module-templates">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs.html#id2">TLS (libs.emailer.Encryption attribute)</a>, <a href="libs.html#libs.emailer.Encryption.TLS">[1]</a>
+
+      <ul>
+        <li><a href="libs.html#id4">(libs.emailer.Port attribute)</a>, <a href="libs.html#libs.emailer.Port.TLS">[1]</a>
 </li>
       </ul></li>
   </ul></td>
@@ -739,36 +828,6 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="models.html#models.store.Store.validate_url_prefix">validate_url_prefix() (models.store.Store class method)</a>
 </li>
-      <li>
-    views
-
-      <ul>
-        <li><a href="views.html#module-views">module</a>
-</li>
-      </ul></li>
-      <li>
-    views.alerts
-
-      <ul>
-        <li><a href="views.html#module-views.alerts">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    views.stores
-
-      <ul>
-        <li><a href="views.html#module-views.stores">module</a>
-</li>
-      </ul></li>
-      <li>
-    views.users
-
-      <ul>
-        <li><a href="views.html#module-views.users">module</a>
-</li>
-      </ul></li>
   </ul></td>
 </tr></table>
 

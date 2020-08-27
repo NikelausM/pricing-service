@@ -88,6 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="alert_updater.html">alert_updater module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="app.html">app module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">controllers package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libs.html">libs package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="models.html">models package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="models.html#subpackages">Subpackages</a><ul class="current">
@@ -95,7 +96,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#module-models.alert">models.alert module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#models-alert-module">models.alert module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#module-models.item">models.item module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#module-models.model">models.model module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="models.html#module-models.store">models.store module</a></li>
@@ -103,7 +104,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="templates.html">templates package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html">views package</a></li>
 </ul>
 </li>
 </ul>
@@ -182,102 +182,243 @@
 </div>
 <div class="section" id="module-models.user.decorators">
 <span id="models-user-decorators-module"></span><h2>models.user.decorators module<a class="headerlink" href="#module-models.user.decorators" title="Permalink to this headline">¶</a></h2>
+<p>This module contains decorator functions used as middleware in the Flask application.</p>
 <dl class="py function">
 <dt id="models.user.decorators.requires_admin">
-<code class="sig-prename descclassname">models.user.decorators.</code><code class="sig-name descname">requires_admin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span></em><span class="sig-paren">)</span> &#x2192; Callable<a class="reference internal" href="_modules/models/user/decorators.html#requires_admin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.decorators.requires_admin" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">models.user.decorators.</code><code class="sig-name descname">requires_admin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>Callable<span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/models/user/decorators.html#requires_admin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.decorators.requires_admin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the passed function only if the
+Admin is the logged in user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> (<em>Callable</em>) – The function to be returned.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The function returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[Callable, Response]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt id="models.user.decorators.requires_login">
-<code class="sig-prename descclassname">models.user.decorators.</code><code class="sig-name descname">requires_login</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span></em><span class="sig-paren">)</span> &#x2192; Callable<a class="reference internal" href="_modules/models/user/decorators.html#requires_login"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.decorators.requires_login" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">models.user.decorators.</code><code class="sig-name descname">requires_login</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>Callable<span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/models/user/decorators.html#requires_login"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.decorators.requires_login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the passed function only if login is verified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>f</strong> (<em>Callable</em>) – The function to be returned.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The function returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[Callable, Response]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </div>
 <div class="section" id="module-models.user.errors">
 <span id="models-user-errors-module"></span><h2>models.user.errors module<a class="headerlink" href="#module-models.user.errors" title="Permalink to this headline">¶</a></h2>
+<p>This module contains <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> Errors</p>
 <dl class="py exception">
 <dt id="models.user.errors.IncorrectPasswordError">
 <em class="property">exception </em><code class="sig-prename descclassname">models.user.errors.</code><code class="sig-name descname">IncorrectPasswordError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/user/errors.html#IncorrectPasswordError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.errors.IncorrectPasswordError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#models.user.errors.UserError" title="models.user.errors.UserError"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.user.errors.UserError</span></code></a></p>
+<p>Class raised when an incorrect <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> password is provided.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt id="models.user.errors.InvalidEmailError">
 <em class="property">exception </em><code class="sig-prename descclassname">models.user.errors.</code><code class="sig-name descname">InvalidEmailError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/user/errors.html#InvalidEmailError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.errors.InvalidEmailError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#models.user.errors.UserError" title="models.user.errors.UserError"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.user.errors.UserError</span></code></a></p>
+<p>Class raised when an email is invalid.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt id="models.user.errors.UserAlreadyRegisteredError">
 <em class="property">exception </em><code class="sig-prename descclassname">models.user.errors.</code><code class="sig-name descname">UserAlreadyRegisteredError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/user/errors.html#UserAlreadyRegisteredError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.errors.UserAlreadyRegisteredError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#models.user.errors.UserError" title="models.user.errors.UserError"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.user.errors.UserError</span></code></a></p>
+<p>Class raised when a <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> is already registered.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt id="models.user.errors.UserError">
 <em class="property">exception </em><code class="sig-prename descclassname">models.user.errors.</code><code class="sig-name descname">UserError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/user/errors.html#UserError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.errors.UserError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Class that represents a generic <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> Error.</p>
 </dd></dl>
 
 <dl class="py exception">
 <dt id="models.user.errors.UserNotFoundError">
 <em class="property">exception </em><code class="sig-prename descclassname">models.user.errors.</code><code class="sig-name descname">UserNotFoundError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/user/errors.html#UserNotFoundError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.errors.UserNotFoundError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#models.user.errors.UserError" title="models.user.errors.UserError"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.user.errors.UserError</span></code></a></p>
+<p>Class raised when a <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> is not found.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-models.user.user">
 <span id="models-user-user-module"></span><h2>models.user.user module<a class="headerlink" href="#module-models.user.user" title="Permalink to this headline">¶</a></h2>
+<p>This module contains the User <a class="reference internal" href="models.html#models.model.Model" title="models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> class.</p>
+<dl class="py attribute">
+<dt id="models.user.user.logger">
+<code class="sig-prename descclassname">models.user.user.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#models.user.user.logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logger used to log information of module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py class">
 <dt id="models.user.user.User">
-<em class="property">class </em><code class="sig-prename descclassname">models.user.user.</code><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">_id</span><span class="p">:</span> <span class="n">InitVar[Union[str, ObjectId]]</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/user/user.html#User"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">models.user.user.</code><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">_id</span><span class="p">:</span> <span class="n">InitVar<span class="p">[</span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>ObjectId<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/user/user.html#User"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="models.html#models.model.Model" title="models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.model.Model</span></code></a></p>
+<p>Class that models a <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a>.</p>
 <dl class="py attribute">
 <dt id="models.user.user.User.collection">
-<code class="sig-name descname">collection</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'users'</em><a class="headerlink" href="#models.user.user.User.collection" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">collection</code><a class="headerlink" href="#models.user.user.User.collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database collection name for the class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py attribute">
 <dt id="models.user.user.User.email">
-<code class="sig-name descname">email</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#models.user.user.User.email" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="models.user.user.User.find_by_email">
-<em class="property">classmethod </em><code class="sig-name descname">find_by_email</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#models.user.user.User" title="models.user.user.User">models.user.user.User</a><a class="reference internal" href="_modules/models/user/user.html#User.find_by_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User.find_by_email" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="models.user.user.User.is_login_valid">
-<em class="property">classmethod </em><code class="sig-name descname">is_login_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><a class="reference internal" href="_modules/models/user/user.html#User.is_login_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User.is_login_valid" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="models.user.user.User.json">
-<code class="sig-name descname">json</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="reference internal" href="_modules/models/user/user.html#User.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User.json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the json representation of the model.</p>
+<code class="sig-name descname">email</code><a class="headerlink" href="#models.user.user.User.email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user email.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The json representation of the model</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.8)"><strong>NotImplementedError</strong></a> – If the method is called without being implemented.</p>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="models.user.user.User.password">
-<code class="sig-name descname">password</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#models.user.user.User.password" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">password</code><a class="headerlink" href="#models.user.user.User.password" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user email.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.user.user.User._id">
+<code class="sig-name descname">_id</code><a class="headerlink" href="#models.user.user.User._id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>InitVar[Union[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>, ObjectId]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-name descname">collection</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'users'</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id1">
+<code class="sig-name descname">email</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="models.user.user.User.find_by_email">
+<em class="property">classmethod </em><code class="sig-name descname">find_by_email</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#models.user.user.User" title="models.user.user.User">models.user.user.User</a><a class="reference internal" href="_modules/models/user/user.html#User.find_by_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User.find_by_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds a <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> by email.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The email to query by.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> corresponding to the query.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#models.user.user.User" title="models.user.user.User">User</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>UserErrors.UserNotFoundError</strong> – If the <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> was not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.user.user.User.is_login_valid">
+<em class="property">classmethod </em><code class="sig-name descname">is_login_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><a class="reference internal" href="_modules/models/user/user.html#User.is_login_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User.is_login_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies the email and password provided for a <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The email to be verified.</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The password to be verified.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the email and password is valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>UserErrors.IncorrectPasswordError</strong> – If an incorrect password was provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.user.user.User.json">
+<code class="sig-name descname">json</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><a class="reference internal" href="_modules/models/user/user.html#User.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the json representation of the <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The json representation of the <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id2">
+<code class="sig-name descname">password</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="models.user.user.User.register_user">
 <em class="property">classmethod </em><code class="sig-name descname">register_user</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><a class="reference internal" href="_modules/models/user/user.html#User.register_user"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.user.user.User.register_user" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Registers a <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The email to register with.</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The password to register with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> was successfully registered, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>UserErrors.InvalidEmailError</strong> – If an invalid email was provided.</p></li>
+<li><p><strong>UserErrors.UserAlreadyRegisteredError</strong> – If the <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> has already been registered.</p></li>
+<li><p><strong>UserErrors.UserNotFoundError</strong> – If the <a class="reference internal" href="#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> was not found.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

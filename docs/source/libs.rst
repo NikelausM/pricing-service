@@ -4,6 +4,14 @@ libs package
 Submodules
 ----------
 
+libs.emailer module
+-------------------
+
+.. automodule:: libs.emailer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 libs.mailgun module
 -------------------
 

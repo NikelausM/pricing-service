@@ -167,7 +167,8 @@
 <span class="kn">from</span> <span class="nn">models.model</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">models.user</span> <span class="kn">import</span> <span class="n">User</span>
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">InitVar</span>
-<span class="kn">from</span> <span class="nn">libs.mailgun</span> <span class="kn">import</span> <span class="n">Mailgun</span>
+<span class="c1"># from libs.mailgun import Mailgun</span>
+<span class="kn">from</span> <span class="nn">libs.emailer</span> <span class="kn">import</span> <span class="n">Email</span>
 
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;pricing-service.models.alert&quot;</span><span class="p">)</span>
@@ -261,7 +262,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="o">.</span><span class="n">price</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">price_limit</span><span class="p">:</span>
             <span class="c1"># print(f&quot;Item {self.item} has reached a price under {self.price_limit:.2f}.&quot; +</span>
             <span class="c1">#       f&quot; Latest price: {self.item.price:.2f}.&quot;)</span>
-            <span class="n">Mailgun</span><span class="o">.</span><span class="n">send_mail</span><span class="p">(</span>
+            <span class="n">Email</span><span class="o">.</span><span class="n">send_mail</span><span class="p">(</span>
                 <span class="n">email</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">user_email</span><span class="p">],</span>
                 <span class="n">subject</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Notification for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
                 <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Your alert for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> has reached a price under </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">price_limit</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">.&#39;</span> <span class="o">+</span>

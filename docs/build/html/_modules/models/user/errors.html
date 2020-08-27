@@ -147,26 +147,45 @@
            <div itemprop="articleBody">
             
   <h1>Source code for models.user.errors</h1><div class="highlight"><pre>
-<span></span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module contains :class:`.User` Errors</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
 
 <div class="viewcode-block" id="UserError"><a class="viewcode-back" href="../../../models.user.html#models.user.errors.UserError">[docs]</a><span class="k">class</span> <span class="nc">UserError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class that represents a generic :class:`.User` Error.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span></div>
 
 
 <div class="viewcode-block" id="UserNotFoundError"><a class="viewcode-back" href="../../../models.user.html#models.user.errors.UserNotFoundError">[docs]</a><span class="k">class</span> <span class="nc">UserNotFoundError</span><span class="p">(</span><span class="n">UserError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class raised when a :class:`.User` is not found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
 
 <div class="viewcode-block" id="UserAlreadyRegisteredError"><a class="viewcode-back" href="../../../models.user.html#models.user.errors.UserAlreadyRegisteredError">[docs]</a><span class="k">class</span> <span class="nc">UserAlreadyRegisteredError</span><span class="p">(</span><span class="n">UserError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class raised when a :class:`.User` is already registered.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
 
 <div class="viewcode-block" id="InvalidEmailError"><a class="viewcode-back" href="../../../models.user.html#models.user.errors.InvalidEmailError">[docs]</a><span class="k">class</span> <span class="nc">InvalidEmailError</span><span class="p">(</span><span class="n">UserError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class raised when an email is invalid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 
 
 <div class="viewcode-block" id="IncorrectPasswordError"><a class="viewcode-back" href="../../../models.user.html#models.user.errors.IncorrectPasswordError">[docs]</a><span class="k">class</span> <span class="nc">IncorrectPasswordError</span><span class="p">(</span><span class="n">UserError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class raised when an incorrect :class:`.User` password is provided.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span></div>
 </pre></div>
 

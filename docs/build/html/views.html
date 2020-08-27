@@ -35,8 +35,7 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="templates package" href="templates.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,24 +81,8 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pricing-service</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="alert_updater.html">alert_updater module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="app.html">app module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common.html">common package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libs.html">libs package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">models package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="templates.html">templates package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">views package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-views.alerts">views.alerts module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-views.stores">views.stores module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-views.users">views.users module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-views">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">pricing-service</a></li>
 </ul>
 
             
@@ -146,8 +129,6 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">pricing-service</a> &raquo;</li>
-        
       <li>views package</li>
     
     
@@ -172,225 +153,17 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-views.alerts">
-<span id="views-alerts-module"></span><h2>views.alerts module<a class="headerlink" href="#module-views.alerts" title="Permalink to this headline">¶</a></h2>
-<p>This module handles the routes corresponding to the <a class="reference internal" href="models.html#models.alert.Alert" title="models.alert.Alert"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.alert.Alert</span></code></a> model.</p>
-<dl class="py attribute">
-<dt id="views.alerts.logger">
-<code class="sig-prename descclassname">views.alerts.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#views.alerts.logger" title="Permalink to this definition">¶</a></dt>
-<dd><p>The logger used to log information of module.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.alerts.delete">
-<code class="sig-prename descclassname">views.alerts.</code><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alert_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/views/alerts.html#delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.alerts.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful DESTROY route.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>alert_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The <a class="reference internal" href="models.html#models.alert.Alert" title="models.alert.Alert"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.alert.Alert</span></code></a> id</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The INDEX template.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.alerts.edit">
-<code class="sig-prename descclassname">views.alerts.</code><code class="sig-name descname">edit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alert_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/views/alerts.html#edit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.alerts.edit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful EDIT (GET method) and UPDATE (POST method) routes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>alert_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The <a class="reference internal" href="models.html#models.alert.Alert" title="models.alert.Alert"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.alert.Alert</span></code></a> id</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The INDEX template if POST method, EDIT template otherwise.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.alerts.index">
-<code class="sig-prename descclassname">views.alerts.</code><code class="sig-name descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/views/alerts.html#index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.alerts.index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful INDEX route.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The INDEX template.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.alerts.new">
-<code class="sig-prename descclassname">views.alerts.</code><code class="sig-name descname">new</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/views/alerts.html#new"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.alerts.new" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful NEW (GET method) and CREATE (POST method) routes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The INDEX template if POST method, NEW template otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="section" id="views-alerts-module">
+<h2>views.alerts module<a class="headerlink" href="#views-alerts-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-views.stores">
-<span id="views-stores-module"></span><h2>views.stores module<a class="headerlink" href="#module-views.stores" title="Permalink to this headline">¶</a></h2>
-<p>This module handles the routes corresponding to the <a class="reference internal" href="models.html#models.store.Store" title="models.store.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.store.Store</span></code></a> model.</p>
-<dl class="py attribute">
-<dt id="views.stores.logger">
-<code class="sig-prename descclassname">views.stores.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#views.stores.logger" title="Permalink to this definition">¶</a></dt>
-<dd><p>The logger used to log information of module.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.stores.delete">
-<code class="sig-prename descclassname">views.stores.</code><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/views/stores.html#delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.stores.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful DESTROY route.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>store_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The <a class="reference internal" href="models.html#models.store.Store" title="models.store.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.store.Store</span></code></a> id</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The INDEX template.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.stores.edit">
-<code class="sig-prename descclassname">views.stores.</code><code class="sig-name descname">edit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/views/stores.html#edit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.stores.edit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful EDIT (GET method) and UPDATE (POST method) routes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>store_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The <a class="reference internal" href="models.html#models.store.Store" title="models.store.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.store.Store</span></code></a> id</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The INDEX template if POST method, EDIT template otherwise.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.stores.index">
-<code class="sig-prename descclassname">views.stores.</code><code class="sig-name descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/views/stores.html#index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.stores.index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful INDEX route.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The INDEX template.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.stores.new">
-<code class="sig-prename descclassname">views.stores.</code><code class="sig-name descname">new</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>werkzeug.wrappers.response.Response<span class="p">]</span><a class="reference internal" href="_modules/views/stores.html#new"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.stores.new" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful NEW (GET method) and CREATE (POST method) routes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The INDEX template if POST method, NEW template otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="section" id="views-stores-module">
+<h2>views.stores module<a class="headerlink" href="#views-stores-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-views.users">
-<span id="views-users-module"></span><h2>views.users module<a class="headerlink" href="#module-views.users" title="Permalink to this headline">¶</a></h2>
-<p>This module handles the routes corresponding to the <a class="reference internal" href="models.user.html#models.user.user.User" title="models.user.user.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.user.user.User</span></code></a> model.</p>
-<dl class="py attribute">
-<dt id="views.users.logger">
-<code class="sig-prename descclassname">views.users.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#views.users.logger" title="Permalink to this definition">¶</a></dt>
-<dd><p>The logger used to log information of module.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.users.login">
-<code class="sig-prename descclassname">views.users.</code><code class="sig-name descname">login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/views/users.html#login"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.users.login" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the Log in route.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The Users LOGIN template if POST method, Alerts INDEX template otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>UserErrors.UserError</strong> – If the user couldn’t be created.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.users.logout">
-<code class="sig-prename descclassname">views.users.</code><code class="sig-name descname">logout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/views/users.html#logout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.users.logout" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the Log out route.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Redirects to the login route.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>Response</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="views.users.register">
-<code class="sig-prename descclassname">views.users.</code><code class="sig-name descname">register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/views/users.html#register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#views.users.register" title="Permalink to this definition">¶</a></dt>
-<dd><p>Handles the RESTful NEW (GET method) and CREATE (POST method) routes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The Alerts INDEX template if POST method, Users REGISTER template otherwise.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>UserErrors.UserError</strong> – If the user couldn’t be created.</p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="section" id="views-users-module">
+<h2>views.users module<a class="headerlink" href="#views-users-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-views">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-views" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -399,13 +172,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="templates.html" class="btn btn-neutral float-left" title="templates package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

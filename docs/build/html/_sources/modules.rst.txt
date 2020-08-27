@@ -7,7 +7,7 @@ pricing-service
    alert_updater
    app
    common
+   controllers
    libs
    models
    templates
-   views
