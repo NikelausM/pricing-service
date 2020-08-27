@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<header>
-    <h1><i class="fas fa-store"></i> Stores</h1>
-    <h6>Create an alert using one of these stores to be alerted about their inventory</h6>
-</header>
 <section>
+    <header>
+        <h1><i class="fas fa-store"></i> Stores</h1>
+        <h6>Create an alert using one of these stores to be alerted about their inventory</h6>
+    </header>
     <div class="list-group mb-3">
         {% for store in stores %}
         <div class="list-group-item">
@@ -30,7 +30,7 @@
     </div>
     {% if session['email'] == config.ADMIN %}
     <a href="{{ url_for('stores.new') }}">
-        <button class="btn btn-primary create">
+        <button class="btn btn-primary create mb-3">
             Create new
         </button>
     </a>

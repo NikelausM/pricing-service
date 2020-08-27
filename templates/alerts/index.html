@@ -13,11 +13,12 @@
                 <a href="{{ alert.item.url }}">{{ alert.name }}</a>
             </h4>
             <p>
-                Last price: {{ alert.item.price }}
+                Last price: <span class="two-number-decimal">{{ alert.item.price }}</span>
             </p>
             {% if alert.item.price < alert.price_limit %}
             <div class="alert alert-success" role="alert">
-                This item is within your price range (less than {{ alert.price_limit }})!
+                This item is within your price range (less than
+                <span class="two-number-decimal">{{ alert.price_limit }}</span>)!
             </div>
             {% endif %}
 

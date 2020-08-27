@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     {% include 'partials/head/base.html' %}
-    <title>Document</title>
+
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
-    <header>
+    <header class="header">
         {% include 'partials/header/base.html' %}
     </header>
 
-    <main>
-        <div class="container mt-0">
+    <main role="main" class="flex-shrink-0">
+        <div class="container mb-3">
 
-            <div class="mt-3">
+            <div class="mb-3">
                 {% include 'partials/flash/flash_messages.html' %}
             </div>
 
-            <div class="mt-3">
+            <div class="mb-3">
                 {% block content %}
 
                 {% endblock %}
@@ -28,9 +28,12 @@
         </div>
     </main>
 
-    <footer>
-        {% include 'partials/footer/base.html' %}
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+        </div>
     </footer>
+    {% include 'partials/footer/base.html' %}
 
 </body>
 

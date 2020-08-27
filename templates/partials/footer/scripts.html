@@ -1,3 +1,14 @@
+<script>
+
+    let numbers = document.querySelectorAll('.two-number-decimal')
+    numbers.forEach(number => {
+        number.textContent = parseFloat(number.textContent).toFixed(2);
+    })
+    function setTwoNumberDecimal(event) {
+
+    }
+</script>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -25,3 +25,12 @@
     font-weight: 900;
     margin: 0 10px 0 0;
 }
+
+main {
+    margin-top: 64px;
+}
+
+footer {
+    position: fixed;
+    z-index: 1;
+}
