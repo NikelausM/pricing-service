@@ -15,6 +15,7 @@ import logging
 from models.alert import Alert
 from dotenv import load_dotenv
 from common.database import Database
+from typing import List
 
 load_dotenv()
 
