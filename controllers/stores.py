@@ -16,7 +16,7 @@ from typing import Union
 from models.store import Store
 from models.user import requires_login, requires_admin
 
-logger = logging.getLogger("pricing-service.views.stores")
+logger = logging.getLogger("pricing-service.controllers.stores")
 
 store_blueprint = Blueprint('stores', __name__)
 

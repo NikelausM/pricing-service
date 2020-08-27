@@ -16,7 +16,7 @@ from models.user import requires_login
 from typing import Union
 from common.utils import Utils
 
-logger = logging.getLogger("pricing-service.views.users")
+logger = logging.getLogger("pricing-service.controllers.users")
 
 user_blueprint = Blueprint('users', __name__)
 
@@ -75,6 +75,7 @@ def login():
         try:
             if User.is_login_valid(email, password):
                 session['email'] = email
+                flash(f"Welcome back, {email}!", 'success')
                 return redirect(url_for('alerts.index'))
         except UserErrors.UserError as err:
             flash(err.message, 'danger')
@@ -113,7 +114,7 @@ def edit() -> Union[str, Response]:
             if User.is_login_valid(email, current_password):
                 user.password = Utils.hash_password(new_password)
                 user.save_to_mongo()
-                flash(f"Welcome back, {user.email}", 'success')
+                flash(f"Profile edited, {user.email}", 'success')
                 return redirect(url_for('alerts.index'))
 
         except UserErrors.UserError as err:

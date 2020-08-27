@@ -3,9 +3,9 @@ import os
 
 from flask import Flask, render_template
 
-from views.alerts import alert_blueprint
-from views.stores import store_blueprint
-from views.users import user_blueprint
+from controllers.alerts import alert_blueprint
+from controllers.stores import store_blueprint
+from controllers.users import user_blueprint
 from common.utils import Utils
 from common.database import Database
 from dotenv import load_dotenv  # type: ignore

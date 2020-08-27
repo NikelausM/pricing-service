@@ -20,7 +20,7 @@ from models.item import Item
 from models.user import requires_login
 from typing import Union
 
-logger = logging.getLogger("pricing-service.views.alerts")
+logger = logging.getLogger("pricing-service.controllers.alerts")
 
 alert_blueprint = Blueprint('alerts', __name__)
 
