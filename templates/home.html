@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="jumbotron">
-        <h1 class="display-4">Pricing Service</h1>
-        <p class="lead">We scan online store websites to alert you of price drops in items that interest you.</p>
-        <hr class="my-4"\>
-        <p>Just sign up and get started by adding the URL of an item that you wish to track. We'll do the rest!</p>
-        <a class="btn btn-primary btn-lg" href="{{ url_for('users.register') }}">Get started</a>
-    </div>
+<div class="jumbotron">
+    <h1 class="display-4"><i class="fas fa-dollar-sign"></i> Pricing Service</h1>
+    <p class="lead">We scan online store websites to alert you of price drops in items that interest you.</p>
+    <hr class="my-4" \>
+    <p>Just sign up and get started by adding the URL of an item that you wish to track. We'll do the rest!</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('users.register') }}">Get started</a>
+</div>
 {% endblock %}
-

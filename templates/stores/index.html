@@ -3,6 +3,7 @@
 {% block content %}
 <header>
     <h1><i class="fas fa-store"></i> Stores</h1>
+    <h6>Create an alert using one of these stores to be alerted about their inventory</h6>
 </header>
 <section>
     <div class="list-group mb-3">
@@ -14,7 +15,7 @@
                 <a href="{{ store.url_prefix }}">{{ store.name }}</a>
             </h4>
             <p>
-                For URLs starting with {{ store.url_prefix }}
+                For URLs starting with <a href="{{ store.url_prefix }}">{{ store.url_prefix }}</a>
             </p>
             {% if session['email'] == config.ADMIN %}
             <a href="{{ url_for('stores.edit', store_id=store._id) }}">
@@ -27,10 +28,15 @@
         </div>
         {% endfor %}
     </div>
+    {% if session['email'] == config.ADMIN %}
     <a href="{{ url_for('stores.new') }}">
         <button class="btn btn-primary create">
             Create new
         </button>
     </a>
+    {% endif %}
+    <div class="alert alert-info info" role="alert">
+        If you want to request more stores for this list, <a href="mailto:{{ config.ADMIN }}">email us</a>!
+    </div>
 </section>
 {% endblock %}

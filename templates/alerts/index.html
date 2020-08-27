@@ -20,9 +20,10 @@
                 This item is within your price range (less than {{ alert.price_limit }})!
             </div>
             {% endif %}
-            <a href="{{ url_for('alerts.edit', alert_id=alert._id) }}">
-                <button class="btn btn-secondary edit">Edit</button>
-            </a>
+
+            <a class="btn btn-secondary edit" href="{{ url_for('alerts.edit', alert_id=alert._id) }}" tabindex="0"
+                role="button" aria-pressed="false">Edit</a>
+
             <a href="{{ url_for('alerts.delete', alert_id=alert._id) }}">
                 <button class="btn btn-danger delete">Delete</button>
             </a>
