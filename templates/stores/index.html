@@ -4,7 +4,7 @@
 <section>
     <header>
         <h1><i class="fas fa-store"></i> Stores</h1>
-        <h6>Create an alert using one of these stores to be alerted about their inventory</h6>
+        <lead>Create an alert using one of these stores to be alerted about their inventory</lead>
     </header>
     <div class="list-group mb-3">
         {% for store in stores %}
@@ -12,17 +12,18 @@
 
             <h4 class="list-group-item-heading">
                 <img height="20" width="20" src={{'http://www.google.com/s2/favicons?domain=' + store.url_prefix }} />
-                <a href="{{ store.url_prefix }}">{{ store.name }}</a>
+                <a class="text-wrap" href="{{ store.url_prefix }}">{{ store.name }}</a>
             </h4>
             <p>
                 For URLs starting with <a href="{{ store.url_prefix }}">{{ store.url_prefix }}</a>
             </p>
             {% if session['email'] == config.ADMIN %}
-            <a href="{{ url_for('stores.edit', store_id=store._id) }}">
-                <button class="btn btn-secondary edit">Edit</button>
+            <a class="btn btn-secondary my-1 edit" href="{{ url_for('stores.edit', store_id=store._id) }}" role="button"
+                aria-pressed="false">
+                Edit
             </a>
             <a href="{{ url_for('stores.delete', store_id=store._id) }}">
-                <button class="btn btn-danger delete">Delete</button>
+                <button class="btn btn-danger my-1 delete">Delete</button>
             </a>
             {% endif %}
         </div>
