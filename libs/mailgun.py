@@ -66,7 +66,7 @@ class Mailgun:
             The subject of the email message.
         text : str
             The text equivalent of the email message body.
-        html : html
+        html : str
             The html equivalent of the email message body.
 
         Returns
