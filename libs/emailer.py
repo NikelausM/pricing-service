@@ -1,6 +1,10 @@
 """
 This module contains the logic for sending emails with the python email module.
 
+Attributes
+----------
+logger : logging.Logger
+    The logger used to log information of module.
 """
 
 import os
@@ -34,43 +38,100 @@ class EmailException(Exception):
     def __init__(self, message: str):
         self.message = message
 
-# Encryption types
-
 
 class Encryption(Enum):
-    """Enumerate email encryption types.
+    """
+    Enumerate email encryption types.
+
     Specifies the types of email encryption available.
+
+    Attributes
+    ----------
+    SSL : str
+        SSl encryption string.
+    TLS : str
+        TLS encryption string.
+
     """
     SSL: str = 'ssl'
     TLS: str = 'tls'
 
-# Email ports
-# port 465 for SSL encryption
-# port 587 for TLS encryption
-
 
 class Port(IntEnum):
-    """Enumerate port integer numbers for email encryption types."""
+    """
+    Enumerate port integer numbers for email encryption types.
+
+    Attributes
+    ----------
+    SSL : int
+        Port number corresponding to SSL encryption.
+    TLS : int
+        Port number corresponding to TLS encryption.
+
+    """
 
     SSL: int = 465
     TLS: int = 587
 
 
 class Email():
+    """
+    Class used for sending multipart emails (text and html).
+
+    This class can send emails by combining a text version and an HTML version of an 
+    email separately, then merge them with the MIMEMultipart('alternative') instance. 
+    This is such that the email has two rendering options, such that in case HTML 
+    can't be rendered successfully, the text version can still be rendered.
+
+    Attributes
+    ----------
+    _ENCRYPTION : str
+        The encryption type string.
+    _PORT : int
+        The port number corresponding to the encryption type.
+    _SMTP_SERVER : str
+        The SMTP server of the sender email.
+    _FROM_EMAIL : str
+        The sender email.
+    _FROM_PASSWORD : str
+        The sender' email password.
+    FROM_TITLE : str
+        The display name portion of the address.
+
+    """
     _ENCRYPTION: str = str(Encryption('tls'))
     _PORT: int = int(Port.TLS)
-    _SMTP_SERVER = os.environ['SMTP_SERVER']
-    _FROM_EMAIL = os.environ['ADMIN']
-    _FROM_PASSWORD = os.environ['ADMIN_EMAIL_PASS']
-
-    FROM_TITLE = 'Pricing service'
+    _SMTP_SERVER: str = os.environ['SMTP_SERVER']
+    _FROM_EMAIL: str = os.environ['ADMIN']
+    _FROM_PASSWORD: str = os.environ['ADMIN_EMAIL_PASS']
+    FROM_TITLE: str = 'Pricing Service'
 
     @classmethod
     def send_mail(cls, email: List[str], subject: str, text: str, html: str):
+        """
+        Sends the email.
+
+        Parameters
+        ----------
+        email : List[str]
+            The list of email addresses to send the email to.
+        subject : str
+            The subject of the email message.
+        text : str
+            The text version of the email message body.
+        html : str
+            The HTML version of the email message body.
+
+        Raises
+        ------
+        EmailException
+            If there was an error sending the email.
+
+        """
         try:
-            message = MIMEMultipart("alternative")
-            message["Subject"] = "multipart test"
-            message["From"] = f"Pricing Service <{cls._FROM_EMAIL}>"
+            message = MIMEMultipart('alternative')
+            message["Subject"] = subject
+            message["From"] = f"{cls.FROM_TITLE} <{cls._FROM_EMAIL}>"
             message["To"] = ', '.join(email)
 
             part1 = MIMEText(text, "plain")
