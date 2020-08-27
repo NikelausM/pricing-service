@@ -1,0 +1,997 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>models package &mdash; pricing-service 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="models.user package" href="models.user.html" />
+    <link rel="prev" title="libs package" href="libs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pricing-service
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pricing-service</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="alert_updater.html">alert_updater module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.html">app module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">controllers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs.html">libs package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">models package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.user.html">models.user package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.alert">models.alert module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.item">models.item module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.model">models.model module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.store">models.store module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">templates package</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pricing-service</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">pricing-service</a> &raquo;</li>
+        
+      <li>models package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/models.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="models-package">
+<h1>models package<a class="headerlink" href="#models-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="models.user.html">models.user package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.user.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.user.html#module-models.user.decorators">models.user.decorators module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.user.html#module-models.user.errors">models.user.errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.user.html#module-models.user.user">models.user.user module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.user.html#module-models.user">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-models.alert">
+<span id="models-alert-module"></span><h2>models.alert module<a class="headerlink" href="#module-models.alert" title="Permalink to this headline">¶</a></h2>
+<p>This module contains the Alert <a class="reference internal" href="#models.model.Model" title="models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> class.</p>
+<dl class="py attribute">
+<dt id="models.alert.logger">
+<code class="sig-prename descclassname">models.alert.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#models.alert.logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logger used to log information of module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="models.alert.Alert">
+<em class="property">class </em><code class="sig-prename descclassname">models.alert.</code><code class="sig-name descname">Alert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">price_limit</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></span></em>, <em class="sig-param"><span class="n">user_email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">item_id</span><span class="p">:</span> <span class="n">dataclasses.InitVar<span class="p">[</span>typing.Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/bson/objectid.html#bson.objectid.ObjectId" title="(in PyMongo v3.11.0)">bson.objectid.ObjectId</a><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">_id</span><span class="p">:</span> <span class="n">dataclasses.InitVar<span class="p">[</span>typing.Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/bson/objectid.html#bson.objectid.ObjectId" title="(in PyMongo v3.11.0)">bson.objectid.ObjectId</a><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/alert.html#Alert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.alert.Alert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#models.model.Model" title="models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.model.Model</span></code></a></p>
+<p>Class that models an Alert.</p>
+<dl class="py attribute">
+<dt id="models.alert.Alert.collection">
+<code class="sig-name descname">collection</code><a class="headerlink" href="#models.alert.Alert.collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database collection name of the Alert class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.alert.Alert.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#models.alert.Alert.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the alert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.alert.Alert.price_limit">
+<code class="sig-name descname">price_limit</code><a class="headerlink" href="#models.alert.Alert.price_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>The price limit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.alert.Alert.user_email">
+<code class="sig-name descname">user_email</code><a class="headerlink" href="#models.alert.Alert.user_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The email of the user the alert corresponds to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.alert.Alert.item_id">
+<code class="sig-name descname">item_id</code><a class="headerlink" href="#models.alert.Alert.item_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of the alert’s corresponding item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>InitVar[Union[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>, ObjectId]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.alert.Alert.item">
+<code class="sig-name descname">item</code><a class="headerlink" href="#models.alert.Alert.item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The alert’s corresponding item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#models.item.Item" title="models.item.Item">Item</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.alert.Alert._id">
+<code class="sig-name descname">_id</code><a class="headerlink" href="#models.alert.Alert._id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of the alert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>InitVar[Union[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>, ObjectId]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-name descname">collection</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'alerts'</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id1">
+<code class="sig-name descname">item_id</code><em class="property">: dataclasses.InitVar<span class="p">[</span>typing.Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/bson/objectid.html#bson.objectid.ObjectId" title="(in PyMongo v3.11.0)">bson.objectid.ObjectId</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="models.alert.Alert.json">
+<code class="sig-name descname">json</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><a class="reference internal" href="_modules/models/alert.html#Alert.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.alert.Alert.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the json representation of the alert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The json representation of the alert.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.alert.Alert.load_item_price">
+<code class="sig-name descname">load_item_price</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a><a class="reference internal" href="_modules/models/alert.html#Alert.load_item_price"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.alert.Alert.load_item_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current price of the alert’s corresponding item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current price of the alert’s item.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id2">
+<code class="sig-name descname">name</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="models.alert.Alert.notify_if_price_reached">
+<code class="sig-name descname">notify_if_price_reached</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/alert.html#Alert.notify_if_price_reached"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.alert.Alert.notify_if_price_reached" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notifies a user via email if a price has reached their desired price.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id3">
+<code class="sig-name descname">price_limit</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></em><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id4">
+<code class="sig-name descname">user_email</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.item">
+<span id="models-item-module"></span><h2>models.item module<a class="headerlink" href="#module-models.item" title="Permalink to this headline">¶</a></h2>
+<p>This module contains the Item <a class="reference internal" href="#models.model.Model" title="models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> class.</p>
+<dl class="py attribute">
+<dt id="models.item.logger">
+<code class="sig-prename descclassname">models.item.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#models.item.logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logger used to log information of module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="models.item.Item">
+<em class="property">class </em><code class="sig-prename descclassname">models.item.</code><code class="sig-name descname">Item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">tag_name</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">price</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">_id</span><span class="p">:</span> <span class="n">InitVar<span class="p">[</span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>ObjectId<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/item.html#Item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.item.Item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#models.model.Model" title="models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.model.Model</span></code></a></p>
+<p>Class that models an item.</p>
+<dl class="py attribute">
+<dt id="models.item.Item.collection">
+<code class="sig-name descname">collection</code><a class="headerlink" href="#models.item.Item.collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database collection name of the Item class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.item.Item.url">
+<code class="sig-name descname">url</code><a class="headerlink" href="#models.item.Item.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference external" href="https://en.wikipedia.org/wiki/URL">URL</a> of the webpage on which the item is found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.item.Item.tag_name">
+<code class="sig-name descname">tag_name</code><a class="headerlink" href="#models.item.Item.tag_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The tag for the item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.item.Item.query">
+<code class="sig-name descname">query</code><a class="headerlink" href="#models.item.Item.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets#Selector">CSS selector</a>
+used to find the item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.item.Item.price">
+<code class="sig-name descname">price</code><a class="headerlink" href="#models.item.Item.price" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum desired price for the item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.item.Item._id">
+<code class="sig-name descname">_id</code><a class="headerlink" href="#models.item.Item._id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of the item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>InitVar[Union[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>, ObjectId]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id5">
+<code class="sig-name descname">collection</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'items'</em><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="models.item.Item.json">
+<code class="sig-name descname">json</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><a class="reference internal" href="_modules/models/item.html#Item.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.item.Item.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the json representation of the item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The json representation of the item.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.item.Item.load_price">
+<code class="sig-name descname">load_price</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a><a class="reference internal" href="_modules/models/item.html#Item.load_price"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.item.Item.load_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests the items webpage, then parses it for the item price, and returns the price.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The item price.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id6">
+<code class="sig-name descname">price</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></em><em class="property"> = None</em><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id7">
+<code class="sig-name descname">query</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>Any<span class="p">]</span></em><a class="headerlink" href="#id7" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id8">
+<code class="sig-name descname">tag_name</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id9">
+<code class="sig-name descname">url</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id9" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.model">
+<span id="models-model-module"></span><h2>models.model module<a class="headerlink" href="#module-models.model" title="Permalink to this headline">¶</a></h2>
+<p>This module contains the Model model class.</p>
+<dl class="py attribute">
+<dt id="models.model.logger">
+<code class="sig-prename descclassname">models.model.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#models.model.logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logger used to log information of module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="models.model.Model">
+<em class="property">class </em><code class="sig-prename descclassname">models.model.</code><code class="sig-name descname">Model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/bson/objectid.html#bson.objectid.ObjectId" title="(in PyMongo v3.11.0)">bson.objectid.ObjectId</a><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/model.html#Model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.model.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class that models a generic model.</p>
+<dl class="py attribute">
+<dt id="models.model.Model.collection">
+<code class="sig-name descname">collection</code><a class="headerlink" href="#models.model.Model.collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database collection name of the class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.model.Model._id">
+<code class="sig-name descname">_id</code><a class="headerlink" href="#models.model.Model._id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of the model object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Union[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>, ObjectId]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.model.Model.all">
+<em class="property">classmethod </em><code class="sig-name descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span><a class="reference internal" href="#models.model.Model" title="models.model.Model">models.model.Model</a><span class="p">]</span><a class="reference internal" href="_modules/models/model.html#Model.all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.model.Model.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds and returns all the models corresponding to the model’s collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The list of all the models of the model’s collection.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="#models.model.Model" title="models.model.Model">Model</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id10">
+<code class="sig-name descname">collection</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="models.model.Model.find_many_by">
+<em class="property">classmethod </em><code class="sig-name descname">find_many_by</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span><a class="reference internal" href="#models.model.Model" title="models.model.Model">models.model.Model</a><span class="p">]</span><a class="reference internal" href="_modules/models/model.html#Model.find_many_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.model.Model.find_many_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds and returns all the models corresponding to an attribute value query.</p>
+<p>Parameters
+attribute : str</p>
+<blockquote>
+<div><p>The attribute to query by.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>value<span class="classifier">Union[str, dict]</span></dt><dd><p>The value of the attribute to query by.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The list of models corresponding to the query.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#models.model.Model" title="models.model.Model">Model</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.model.Model.find_one_by">
+<em class="property">classmethod </em><code class="sig-name descname">find_one_by</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#models.model.Model" title="models.model.Model">models.model.Model</a><a class="reference internal" href="_modules/models/model.html#Model.find_one_by"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.model.Model.find_one_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds and returns the model corresponding to an attribute value query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attribute</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The attribute to query by.</p></li>
+<li><p><strong>value</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em>]</em>) – The value of the attribute to query by.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The model corresponding to the query.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#models.model.Model" title="models.model.Model">Model</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.model.Model.get_by_id">
+<em class="property">classmethod </em><code class="sig-name descname">get_by_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/bson/objectid.html#bson.objectid.ObjectId" title="(in PyMongo v3.11.0)">bson.objectid.ObjectId</a><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#models.model.Model" title="models.model.Model">models.model.Model</a><a class="reference internal" href="_modules/models/model.html#Model.get_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.model.Model.get_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds and returns a model by id from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>_id</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>ObjectId</em><em>]</em>) – The id of the model object.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The model corresponding to the id.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#models.model.Model" title="models.model.Model">Model</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.model.Model.json">
+<em class="property">abstract </em><code class="sig-name descname">json</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><a class="reference internal" href="_modules/models/model.html#Model.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.model.Model.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the json representation of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The json representation of the model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.8)"><strong>NotImplementedError</strong></a> – If the method is called without being implemented.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.model.Model.remove_from_mongo">
+<code class="sig-name descname">remove_from_mongo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/model.html#Model.remove_from_mongo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.model.Model.remove_from_mongo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the model from the MongoDB database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.model.Model.save_to_mongo">
+<code class="sig-name descname">save_to_mongo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/model.html#Model.save_to_mongo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.model.Model.save_to_mongo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the model to the MongoDB database.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.store">
+<span id="models-store-module"></span><h2>models.store module<a class="headerlink" href="#module-models.store" title="Permalink to this headline">¶</a></h2>
+<p>This module contains the Store <a class="reference internal" href="#models.model.Model" title="models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> class.</p>
+<dl class="py attribute">
+<dt id="models.store.logger">
+<code class="sig-prename descclassname">models.store.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#models.store.logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logger used to log information of module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="models.store.Store">
+<em class="property">class </em><code class="sig-prename descclassname">models.store.</code><code class="sig-name descname">Store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">url_prefix</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">tag_name</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">_id</span><span class="p">:</span> <span class="n">InitVar<span class="p">[</span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>ObjectId<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models/store.html#Store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#models.model.Model" title="models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.model.Model</span></code></a></p>
+<p>”
+Class that models a store.</p>
+<dl class="py attribute">
+<dt id="models.store.Store.collection">
+<code class="sig-name descname">collection</code><a class="headerlink" href="#models.store.Store.collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database collection name of the store class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.store.Store.URL_PREFIX_REGEX">
+<code class="sig-name descname">URL_PREFIX_REGEX</code><a class="headerlink" href="#models.store.Store.URL_PREFIX_REGEX" title="Permalink to this definition">¶</a></dt>
+<dd><p>The regex expression used to validate a URL prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.store.Store.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#models.store.Store.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The store name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.store.Store.url_prefix">
+<code class="sig-name descname">url_prefix</code><a class="headerlink" href="#models.store.Store.url_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>The store URL prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.store.Store.tag_name">
+<code class="sig-name descname">tag_name</code><a class="headerlink" href="#models.store.Store.tag_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The store’s tag name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.store.Store.query">
+<code class="sig-name descname">query</code><a class="headerlink" href="#models.store.Store.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets#Selector">CSS selector</a>
+used to find the item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="models.store.Store._id">
+<code class="sig-name descname">_id</code><a class="headerlink" href="#models.store.Store._id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of the store.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>InitVar[Union[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a>, ObjectId]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id12">
+<code class="sig-name descname">URL_PREFIX_REGEX</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = '(^https?:\\/\\/.+?\\/$)'</em><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id13">
+<code class="sig-name descname">collection</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'stores'</em><a class="headerlink" href="#id13" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.find_by_url">
+<em class="property">classmethod </em><code class="sig-name descname">find_by_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#models.store.Store" title="models.store.Store">models.store.Store</a><a class="reference internal" href="_modules/models/store.html#Store.find_by_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.find_by_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a store by URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The store name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The store corresponding to the URL provided.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#models.store.Store" title="models.store.Store">Store</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.fix_post_url_prefix">
+<em class="property">classmethod </em><code class="sig-name descname">fix_post_url_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><a class="reference internal" href="_modules/models/store.html#Store.fix_post_url_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.fix_post_url_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to fix post url prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The URL to be fixed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The fixed URL if it was fixed,
+otherwise the original URL is returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.fix_pre_and_post_url_prefix">
+<em class="property">classmethod </em><code class="sig-name descname">fix_pre_and_post_url_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><a class="reference internal" href="_modules/models/store.html#Store.fix_pre_and_post_url_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.fix_pre_and_post_url_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to fix pre and post url prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The URL to be fixed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The fixed URL if it was fixed,
+otherwise the original URL is returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.fix_pre_url_prefix">
+<em class="property">classmethod </em><code class="sig-name descname">fix_pre_url_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><a class="reference internal" href="_modules/models/store.html#Store.fix_pre_url_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.fix_pre_url_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to fix the pre url prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The URL to be fixed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The fixed URL if it was fixed,
+otherwise the original URL is returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.fix_url_prefix">
+<em class="property">classmethod </em><code class="sig-name descname">fix_url_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><a class="reference internal" href="_modules/models/store.html#Store.fix_url_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.fix_url_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to fix the URL prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The URL to be fixed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The fixed URL if it was fixed,
+otherwise the original URL is returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – If the URL is invalid or unfixable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.get_by_name">
+<em class="property">classmethod </em><code class="sig-name descname">get_by_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">store_name</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#models.store.Store" title="models.store.Store">models.store.Store</a><a class="reference internal" href="_modules/models/store.html#Store.get_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.get_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a store by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>store_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The store name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The store corresponding to the store name provided.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#models.store.Store" title="models.store.Store">Store</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.get_by_url_prefix">
+<em class="property">classmethod </em><code class="sig-name descname">get_by_url_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_prefix</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#models.store.Store" title="models.store.Store">models.store.Store</a><a class="reference internal" href="_modules/models/store.html#Store.get_by_url_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.get_by_url_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a store by URL prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The store name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The store corresponding to the URL prefix provided.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#models.store.Store" title="models.store.Store">Store</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.json">
+<code class="sig-name descname">json</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><a class="reference internal" href="_modules/models/store.html#Store.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the json representation of the store.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The json representation of the store.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id14">
+<code class="sig-name descname">name</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id14" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id15">
+<code class="sig-name descname">query</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>Any<span class="p">]</span></em><a class="headerlink" href="#id15" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id16">
+<code class="sig-name descname">tag_name</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id17">
+<code class="sig-name descname">url_prefix</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><a class="headerlink" href="#id17" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="models.store.Store.validate_url_prefix">
+<em class="property">classmethod </em><code class="sig-name descname">validate_url_prefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><a class="reference internal" href="_modules/models/store.html#Store.validate_url_prefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#models.store.Store.validate_url_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates a URL prefix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The url to be validated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if URL valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-models" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models.user.html" class="btn btn-neutral float-right" title="models.user package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="libs.html" class="btn btn-neutral float-left" title="libs package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Jose Nicolas Mora
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

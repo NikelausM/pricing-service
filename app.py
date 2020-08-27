@@ -1,3 +1,14 @@
+"""
+This module is the main script for this Flask web application.
+By running this script, the Flask web app starts running.
+
+Attributes
+----------
+logger : logging.Logger
+    The logger used to log information of module.
+
+"""
+
 import logging
 import os
 
@@ -21,11 +32,22 @@ load_dotenv()
 
 @app.before_first_request
 def init_db():
+    """
+    Initializes the database before the first request.
+    """
     Database.initialize()
 
 
 @app.route('/')
 def home():
+    """
+    Returns the home page.
+
+    Returns
+    -------
+    str
+        The home page html page.
+    """
     return render_template('home.html')
 
 
@@ -46,4 +68,4 @@ if __name__ == '__main__':
 
     logger = logging.getLogger("pricing-service")
 
-    app.run(debug=True, port=5000)
+    app.run(port=5000)

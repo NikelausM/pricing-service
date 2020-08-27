@@ -1,3 +1,15 @@
+"""
+This module runs using CRON jobs to periodically notify users by email 
+if alert item price is within desired user range.
+
+Attributes
+----------
+logger : logging.Logger
+    The logger used to log information of module.
+alerts : List[Alert]
+    The list of alerts to be checked for price changes.
+"""
+
 import logging
 
 from models.alert import Alert
@@ -21,13 +33,12 @@ Database.initialize()
 
 logger.debug("Sending alerts...")
 
-alerts: = Alert.all()
+alerts = Alert.all()
 
 for alert in alerts:
-    if alert.user_email == "jnickm@gmail.com":
-        logger.debug("Email sent.")
-        alert.load_item_price()
-        alert.notify_if_price_reached()
+    logger.debug("Email sent.")
+    alert.load_item_price()
+    alert.notify_if_price_reached()
 
 if not alerts:
     print("No alerts have been created. Add an item and an alert to begin!")

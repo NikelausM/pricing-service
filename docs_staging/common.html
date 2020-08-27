@@ -1,0 +1,654 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>common package &mdash; pricing-service 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="controllers package" href="controllers.html" />
+    <link rel="prev" title="app module" href="app.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pricing-service
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pricing-service</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="alert_updater.html">alert_updater module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.html">app module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">common package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-common.database">common.database module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-common.utils">common.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-common">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">controllers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs.html">libs package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">templates package</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pricing-service</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">pricing-service</a> &raquo;</li>
+        
+      <li>common package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/common.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="common-package">
+<h1>common package<a class="headerlink" href="#common-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-common.database">
+<span id="common-database-module"></span><h2>common.database module<a class="headerlink" href="#module-common.database" title="Permalink to this headline">¶</a></h2>
+<p>Module that contains database interaction logic.</p>
+<p>This module allows for interaction with a database, and can be run by itself.
+All database URL generic syntax components are assumed to be stored as environment
+variables at runtime. For more information about URL generic syntax
+see <a class="reference external" href="https://en.wikipedia.org/wiki/URI">WIKI Docs</a></p>
+<dl class="py attribute">
+<dt id="common.database.logger">
+<code class="sig-prename descclassname">common.database.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#common.database.logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>The logger used to log information of module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.8)">logging.Logger</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="common.database.Database">
+<em class="property">class </em><code class="sig-prename descclassname">common.database.</code><code class="sig-name descname">Database</code><a class="reference internal" href="_modules/common/database.html#Database"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.database.Database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class that interacts with database.</p>
+<p>This class provides further abstraction to a database object that performs database
+level operations.</p>
+<dl class="py attribute">
+<dt id="common.database.Database.SCHEME">
+<code class="sig-name descname">SCHEME</code><a class="headerlink" href="#common.database.Database.SCHEME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component of the <strong>URI</strong> that specifies the protocol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.SCHEME_POST_FIX">
+<code class="sig-name descname">SCHEME_POST_FIX</code><a class="headerlink" href="#common.database.Database.SCHEME_POST_FIX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional postfix of the <strong>SCHEME</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.DB_USERNAME">
+<code class="sig-name descname">DB_USERNAME</code><a class="headerlink" href="#common.database.Database.DB_USERNAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Part of the <strong>USER_INFO</strong>, specifying the database user username.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.DB_PASSWORD">
+<code class="sig-name descname">DB_PASSWORD</code><a class="headerlink" href="#common.database.Database.DB_PASSWORD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Part of the <strong>USER_INFO</strong>, specifying the database user password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.USER_INFO">
+<code class="sig-name descname">USER_INFO</code><a class="headerlink" href="#common.database.Database.USER_INFO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subcomponent of <strong>AUTHORITY</strong> that consists of username and password
+preceded by a colon <code class="code docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.BASE_HOST_NAME">
+<code class="sig-name descname">BASE_HOST_NAME</code><a class="headerlink" href="#common.database.Database.BASE_HOST_NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Part of <strong>HOST</strong> that is proceded by a
+forward slash :code:<a href="#id1"><span class="problematic" id="id2">`</span></a>/’ and the database name, <strong>DB_NAME</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.DB_NAME">
+<code class="sig-name descname">DB_NAME</code><a class="headerlink" href="#common.database.Database.DB_NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Part of <strong>HOST</strong> that specifies the name of the database to connect to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.HOST">
+<code class="sig-name descname">HOST</code><a class="headerlink" href="#common.database.Database.HOST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subcomponent of <strong>AUTHORITY</strong> that consists of the <strong>BASE_HOST_NAME*</strong>
+and the <strong>DB_NAME</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.PORT">
+<code class="sig-name descname">PORT</code><a class="headerlink" href="#common.database.Database.PORT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional subcomponent of <strong>AUTHORITY</strong> preceded by a colon <code class="code docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.AUTHORITY">
+<code class="sig-name descname">AUTHORITY</code><a class="headerlink" href="#common.database.Database.AUTHORITY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component of <strong>URI</strong> preceded by two forward slashes <code class="code docutils literal notranslate"><span class="pre">//</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.CONNECTION_OPTIONS">
+<code class="sig-name descname">CONNECTION_OPTIONS</code><a class="headerlink" href="#common.database.Database.CONNECTION_OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component of <strong>URI</strong> that specifies the behavior of the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.URI">
+<code class="sig-name descname">URI</code><a class="headerlink" href="#common.database.Database.URI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uniform Resource Identifier for connecting to the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="common.database.Database.DATABASE">
+<code class="sig-name descname">DATABASE</code><a class="headerlink" href="#common.database.Database.DATABASE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database object that performs database level operations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/pymongo/database.html#pymongo.database.Database" title="(in PyMongo v3.11.0)">pymongo.database.Database</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-name descname">AUTHORITY</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_USERNAME:DB_PASSWORD&#64;DB_BASE_HOST_NAME/DB_NAME:DB_PORT'</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id3">
+<code class="sig-name descname">BASE_HOST_NAME</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_BASE_HOST_NAME'</em><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id4">
+<code class="sig-name descname">CONNECTION_OPTIONS</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_CONNECTION_OPTIONS'</em><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id5">
+<code class="sig-name descname">DATABASE</code><em class="property">: <a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/pymongo/database.html#pymongo.database.Database" title="(in PyMongo v3.11.0)">pymongo.database.Database</a></em><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id6">
+<code class="sig-name descname">DB_NAME</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_NAME'</em><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id7">
+<code class="sig-name descname">DB_PASSWORD</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_PASSWORD'</em><a class="headerlink" href="#id7" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id8">
+<code class="sig-name descname">DB_USERNAME</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_USERNAME'</em><a class="headerlink" href="#id8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id9">
+<code class="sig-name descname">HOST</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_BASE_HOST_NAME/DB_NAME'</em><a class="headerlink" href="#id9" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id10">
+<code class="sig-name descname">PORT</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_PORT'</em><a class="headerlink" href="#id10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id11">
+<code class="sig-name descname">SCHEME</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_SCHEME'</em><a class="headerlink" href="#id11" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id12">
+<code class="sig-name descname">SCHEME_POST_FIX</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_SCHEME_POST_FIX'</em><a class="headerlink" href="#id12" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id13">
+<code class="sig-name descname">URI</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_SCHEMEDB_SCHEME_POST_FIX://DB_USERNAME:DB_PASSWORD&#64;DB_BASE_HOST_NAME/DB_NAME:DB_PORT?DB_CONNECTION_OPTIONS'</em><a class="headerlink" href="#id13" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id14">
+<code class="sig-name descname">USER_INFO</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></em><em class="property"> = 'DB_USERNAME:DB_PASSWORD'</em><a class="headerlink" href="#id14" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="common.database.Database.find">
+<em class="property">classmethod </em><code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/pymongo/cursor.html#pymongo.cursor.Cursor" title="(in PyMongo v3.11.0)">pymongo.cursor.Cursor</a><a class="reference internal" href="_modules/common/database.html#Database.find"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.database.Database.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters a collection with a query to find all matching documents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The collection to be queried.</p></li>
+<li><p><strong>query</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – The query to filter the collection with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The cursor corresponding to the query.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/pymongo/cursor.html#pymongo.cursor.Cursor" title="(in PyMongo v3.11.0)">pymongo.cursor.Cursor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="common.database.Database.find_one">
+<em class="property">classmethod </em><code class="sig-name descname">find_one</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/pymongo/cursor.html#pymongo.cursor.Cursor" title="(in PyMongo v3.11.0)">pymongo.cursor.Cursor</a><a class="reference internal" href="_modules/common/database.html#Database.find_one"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.database.Database.find_one" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters a collection with a query to find matching a document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The collection to be queried.</p></li>
+<li><p><strong>query</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – The query to filter the collection with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cursor corresponding to the query.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/pymongo/cursor.html#pymongo.cursor.Cursor" title="(in PyMongo v3.11.0)">pymongo.cursor.Cursor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="common.database.Database.initialize">
+<em class="property">classmethod </em><code class="sig-name descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/database.html#Database.initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.database.Database.initialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="common.database.Database.insert">
+<em class="property">classmethod </em><code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="reference internal" href="_modules/common/database.html#Database.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.database.Database.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert document into a database collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The collection for document to be inserted into.</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – The document to be inserted into the collection.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="common.database.Database.remove">
+<em class="property">classmethod </em><code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a><a class="reference internal" href="_modules/common/database.html#Database.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.database.Database.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters a collection with a query to remove a matching document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The collection to be queried.</p></li>
+<li><p><strong>query</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – The query to filter the collection with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Cursor corresponding to the query.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://pymongo.readthedocs.io/en/stable/api/pymongo/cursor.html#pymongo.cursor.Cursor" title="(in PyMongo v3.11.0)">pymongo.cursor.Cursor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="common.database.Database.update">
+<em class="property">classmethod </em><code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">collection</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em>, <em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="reference internal" href="_modules/common/database.html#Database.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.database.Database.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters a collection with a query to update a matching document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The collection to be queried.</p></li>
+<li><p><strong>query</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – The query to filter the collection with.</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – The document to be updated.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-common.utils">
+<span id="common-utils-module"></span><h2>common.utils module<a class="headerlink" href="#module-common.utils" title="Permalink to this headline">¶</a></h2>
+<p>Module that contains a class with utility functions.</p>
+<dl class="py class">
+<dt id="common.utils.Utils">
+<em class="property">class </em><code class="sig-prename descclassname">common.utils.</code><code class="sig-name descname">Utils</code><a class="reference internal" href="_modules/common/utils.html#Utils"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.utils.Utils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class that provides utility functions.</p>
+<dl class="py method">
+<dt id="common.utils.Utils.check_hashed_password">
+<em class="property">static </em><code class="sig-name descname">check_hashed_password</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em>, <em class="sig-param"><span class="n">hashed_password</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><a class="reference internal" href="_modules/common/utils.html#Utils.check_hashed_password"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.utils.Utils.check_hashed_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies if the provided password matches the hashed_password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The password provided.</p></li>
+<li><p><strong>hashed_password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The password stored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if passwords match, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="common.utils.Utils.email_is_valid">
+<em class="property">static </em><code class="sig-name descname">email_is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">email</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><a class="reference internal" href="_modules/common/utils.html#Utils.email_is_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.utils.Utils.email_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the email has valid email format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The email to be validated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if email is valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="common.utils.Utils.hash_password">
+<em class="property">static </em><code class="sig-name descname">hash_password</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><a class="reference internal" href="_modules/common/utils.html#Utils.hash_password"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.utils.Utils.hash_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypts the provided password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The password to be encrypted.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The encrypted password.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="common.utils.Utils.random_string_generator">
+<em class="property">static </em><code class="sig-name descname">random_string_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">str_size</span><span class="o">=</span><span class="default_value">30</span></em>, <em class="sig-param"><span class="n">allowed_chars</span><span class="o">=</span><span class="default_value">'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!&quot;#$%&amp;\'()*+,-./:;&lt;=&gt;?&#64;[\\]^_`{|}~'</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><a class="reference internal" href="_modules/common/utils.html#Utils.random_string_generator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#common.utils.Utils.random_string_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates and returns a random string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The size of the string to be generated.</p></li>
+<li><p><strong>allowed_chars</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – The string containing the characters allowed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The random string generated.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-common">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-common" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="controllers.html" class="btn btn-neutral float-right" title="controllers package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="app.html" class="btn btn-neutral float-left" title="app module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Jose Nicolas Mora
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
