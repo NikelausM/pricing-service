@@ -9,8 +9,12 @@ logger : logging.Logger
 """
 import logging
 
-from flask import Blueprint, request, session, url_for, render_template, redirect
+from flask import Blueprint, request, session, url_for, render_template, redirect, flash
+from werkzeug.wrappers import Response
 from models.user import User, UserErrors
+from models.user import requires_login
+from typing import Union
+from common.utils import Utils
 
 logger = logging.getLogger("pricing-service.views.users")
 
@@ -72,10 +76,51 @@ def login():
             if User.is_login_valid(email, password):
                 session['email'] = email
                 return redirect(url_for('alerts.index'))
-        except UserErrors.UserError as e:
-            return e.message
+        except UserErrors.UserError as err:
+            flash(err.message, 'danger')
+            return redirect(url_for('users.login'))
 
     return render_template('users/login.html')
+
+
+@user_blueprint.route('/edit', methods=['GET', 'POST'])
+@requires_login
+def edit() -> Union[str, Response]:
+    """
+    Handles the RESTful NEW (GET method) and CREATE (POST method) routes.
+
+    Returns
+    -------
+    str
+        The Alerts INDEX template if POST method, Alerts INDEX template otherwise.
+
+    Raises
+    ------
+    UserErrors.UserError
+        If the user couldn't be created.
+
+    """
+    email = session['email']
+    user = User.find_by_email(email)
+
+    if request.method == 'POST':
+        logger.info(f"request.form: {request.form}")
+        email = request.form['email']
+        current_password = request.form['current-password']
+        new_password = request.form['new-password']
+
+        try:
+            if User.is_login_valid(email, current_password):
+                user.password = Utils.hash_password(new_password)
+                user.save_to_mongo()
+                flash(f"Welcome back, {user.email}", 'success')
+                return redirect(url_for('alerts.index'))
+
+        except UserErrors.UserError as err:
+            flash(err.message, 'danger')
+            return redirect(url_for('.edit'))
+
+    return render_template('users/edit.html', user=user)
 
 
 @user_blueprint.route('/logout')

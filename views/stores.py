@@ -22,7 +22,6 @@ store_blueprint = Blueprint('stores', __name__)
 
 
 @store_blueprint.route('/')
-@requires_login
 def index() -> Union[str, Response]:
     """
     Handles the RESTful INDEX route.
