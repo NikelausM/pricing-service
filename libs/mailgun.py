@@ -1,5 +1,5 @@
 """
-This module contains the logic for sending emails.
+This module contains the logic for sending emails with Mailgun.
 
 """
 
