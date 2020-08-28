@@ -19,7 +19,7 @@
 Pricing Service is a Python Flask web application that allows you track items of online stores and be notified by email if the item has dropped below a user set minimum price.
 
 ## Features
-- Scrapes the e-commerce websites
+- Scrapes e-commerce websites
 - User can create/edit their profile.
 - User may view availale stores that they wish to track the items of.
 - User may track a desired item from an avaiable store by creating an Alert.
