@@ -49,7 +49,7 @@ To run application, in a terminal enter:
 python app.py
 ```
 ### Deployment
-[Check out the website!](https://pricing-service-nikelausm.herokuapp.com/stores/)
+[Check out the website!](https://pricing-service-nikelausm.herokuapp.com/)
 
 #### Deployment Diagram
 <img src="./images/screenshots/pricing-service-deployment-diagram.png" alt="The deployment diagram of the application.">
