@@ -6,8 +6,16 @@
 Welcome to pricing-service's documentation!
 ===========================================
 
+.. |fab fa-github| raw:: html
+
+   <i class="fab fa-github"></i>
+
+|fab fa-github| GitHub
+======================
+`Check out  this project <https://github.com/NikelausM/pricing-service>`_ and its README on GitHub.
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    modules
@@ -18,3 +26,5 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+

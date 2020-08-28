@@ -16,6 +16,7 @@ from typing import List, Dict
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('../../bin/scripts/'))
 
 
 # -- Project information -----------------------------------------------------
@@ -94,6 +95,7 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ['https://use.fontawesome.com/releases/v5.7.1/css/all.css']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -158,7 +160,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'pricing-service', 'pricing-service Documentation',
-     author, 'pricing-service', 'One line description of project.',
+     author, 'pricing-service', 'Pricing Service that notifies you of when an online store item reaches a price you like!',
      'Miscellaneous'),
 ]
 
@@ -188,5 +190,5 @@ epub_exclude_files = ['search.html']
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
                        'pymongo': ('https://pymongo.readthedocs.io/en/stable/', None),
-                       'bson': ('https://pymongo.readthedocs.io/en/stable/', None),
-                       'typing': ('https://github.com/python/cpython/blob/3.8/Lib/typing.py', None), }
+                       'bson': ('https://pymongo.readthedocs.io/en/stable/', None),}
+

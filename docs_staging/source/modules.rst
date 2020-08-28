@@ -5,6 +5,7 @@ pricing-service
    :maxdepth: 4
 
    app
+   bin
    common
    controllers
    libs

@@ -30,16 +30,19 @@ logging.basicConfig(
 
 logger = logging.getLogger("pricing-service.alert_updater")
 
-Database.initialize()
+try:
+    Database.initialize()
 
-logger.debug("Sending alerts...")
+    logger.debug("Sending alerts...")
 
-alerts = Alert.all()
+    alerts = Alert.all()
 
-for alert in alerts:
-    logger.debug("Email sent.")
-    alert.load_item_price()
-    alert.notify_if_price_reached()
+    for alert in alerts:
+        logger.debug("Email sent.")
+        alert.load_item_price()
+        alert.notify_if_price_reached()
 
-if not alerts:
-    print("No alerts have been created. Add an item and an alert to begin!")
+    if not alerts:
+        print("No alerts have been created. Add an item and an alert to begin!")
+except Exception as err:
+    logger.debug(f"alert_updater err: {err}")
