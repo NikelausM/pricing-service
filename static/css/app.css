@@ -30,6 +30,10 @@ main {
     margin-top: 80px;
 }
 
+footer {
+    background-color: #f5f5f5;
+}
+
 a.text-wrap {
     white-space: pre-wrap; /* CSS3 */    
     white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
