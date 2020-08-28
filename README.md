@@ -11,8 +11,8 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Launch](#launch)
+- [Screenshots](#screenshots)
 - [Technologies](#technologies)
 
 ## Introduction
@@ -33,6 +33,26 @@ Pricing Service is a Python Flask web application that allows you track items of
     - User may edit Alerts
 - Administrators may add new stores to the stores list.
 - [Extensive documentation website](https://nikelausm.github.io/pricing-service/) built with [Sphinx](https://www.sphinx-doc.org/en/master/).
+
+## Launch
+### Setup
+To install necessary virtual environment, in a terminal enter:
+```
+pipenv install
+```
+To activate virtual environment needed to run application, in a terminal enter:
+```
+pipenv shell
+```
+To run application, in a terminal enter:
+```
+python app.py
+```
+### Deployment
+[Check out the website!](https://pricing-service-nikelausm.herokuapp.com/stores/)
+
+#### Deployment Diagram
+<img src="./images/screenshots/pricing-service-deployment-diagram.png" alt="The deployment diagram of the application.">
 
 ## Screenshots
 ### Landing Page
@@ -56,27 +76,11 @@ Pricing Service is a Python Flask web application that allows you track items of
 ### Email Notification
 <img src="./images/screenshots/automatic_email_notification.PNG" alt="A screenshot of an automatic email notification from an alert.">
 
-### Documentation (Docs) Website
-[Check out the docs website here!](https://nikelausm.github.io/pricing-service/).
+### [Documentation Website](https://nikelausm.github.io/pricing-service/)) Built With [Sphinx](https://www.sphinx-doc.org/en/master/)
 <img src="./images/screenshots/docs_website.PNG" alt="A screenshot of the documentation website.">
 
 ### Docs Website Example Page
 <img src="./images/screenshots/docs_page_example.PNG" alt="A screenshot of an example of what one of the documentation website pages look like.">
-
-## Launch
-### Setup
-To install necessary virtual environment, in a terminal enter:
-```
-pipenv install
-```
-To activate virtual environment needed to run application, in a terminal enter:
-```
-pipenv shell
-```
-To run application, in a terminal enter:
-```
-python app.py
-```
 
 ## Technologies
 - [Python version 3.8.3](https://www.python.org/downloads/release/python-383/)
@@ -86,6 +90,8 @@ python app.py
     - Templating language for Python, modelled after Django's templates.
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
     - A [WSGI](https://wsgi.readthedocs.io/en/latest/) web application library.
+- [UWSGI](https://uwsgi-docs.readthedocs.io/en/latest/)
+    - The application server.
 - [BeautifulSoup4 version 4.9.1](https://pypi.org/project/beautifulsoup4/)
     - Allows a web page to be scraped (parses its HTML or XML)
 - [requests version 2.24.0](https://pypi.org/project/requests/)
@@ -94,6 +100,10 @@ python app.py
     - Python module for working with MongoDB.
 - [MongoDB](https://www.mongodb.com)
     - General purpose, document-based database (NoSQL).
+- [Mailgun API](https://documentation.mailgun.com/en/latest/quickstart-sending.html#)
+    - An API I first used for sending emails.
+- Gmail SMTP
+    - I transitioned to using a [custom email class](https://github.com/NikelausM/pricing-service/blob/master/libs/emailer.py) that uses SMTP TLS to send email with Gmail.
 - [Sphinx version 3.2.1](https://www.sphinx-doc.org/en/master/)
     - Python documentation website generator.
 - [logging](https://docs.python.org/3/library/logging.html)
