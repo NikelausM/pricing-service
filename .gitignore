@@ -12,5 +12,4 @@ logs/
 cron_config/
 socket.sock
 uwsgi.ini
-docs
 docs_staging/
