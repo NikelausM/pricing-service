@@ -33,8 +33,6 @@ Pricing Service is a Python Flask web application that allows you track items of
     - User may edit Alerts
 - Administrators may add new stores to the stores list.
 - [Extensive documentation website](https://nikelausm.github.io/pricing-service/) built with [Sphinx](https://www.sphinx-doc.org/en/master/).
-- [CRON](https://en.wikipedia.org/wiki/Cron) jobs are used to notify the User by email periodically if an item has dropped below its minimum price.
-    - This feature has been deprecated.
 
 ## Screenshots
 ### Landing Page
