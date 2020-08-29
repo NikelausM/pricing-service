@@ -84,7 +84,7 @@ python app.py
 
 ## Technologies
 - [Python version 3.8.3](https://www.python.org/downloads/release/python-383/)
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+- [Flask version 1.1.2](https://flask.palletsprojects.com/en/1.1.x/)
     - Python web development framework.
 - [Jinja2 version 2.11.2](https://jinja.palletsprojects.com/en/2.11.x/)
     - Templating language for Python, modelled after Django's templates.
