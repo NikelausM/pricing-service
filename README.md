@@ -90,9 +90,9 @@ Sidenote: The website also used to be hosted using Nginx + uWSGI + Flask using [
     - Python web development framework.
 - [Jinja2 version 2.11.2](https://jinja.palletsprojects.com/en/2.11.x/)
     - Templating language for Python, modelled after Django's templates.
-- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
+- [Werkzeug version 1.0.1](https://werkzeug.palletsprojects.com/en/1.0.x/)
     - A [WSGI](https://wsgi.readthedocs.io/en/latest/) web application library.
-- [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/)
+- [uWSGI version 2.0.19.1](https://uwsgi-docs.readthedocs.io/en/latest/)
     - The application server.
 - [BeautifulSoup4 version 4.9.1](https://pypi.org/project/beautifulsoup4/)
     - Allows a web page to be scraped (parses its HTML or XML)
