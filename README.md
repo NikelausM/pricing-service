@@ -49,7 +49,9 @@ To run application, in a terminal enter:
 python app.py
 ```
 ### Deployment
-[Check out the website!](https://pricing-service-nikelausm.herokuapp.com/)
+[Check out the website on Heroku!](https://pricing-service-nikelausm.herokuapp.com/)
+
+Sidenote: The website also used to be hosted using Nginx + uWSGI + Flask using [Digital Ocean](https://www.digitalocean.com), but I have since taken that down.
 
 #### Deployment Diagram
 <img src="./images/screenshots/pricing-service-deployment-diagram.png" alt="The deployment diagram of the application.">
