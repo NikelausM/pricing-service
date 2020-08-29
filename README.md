@@ -76,7 +76,7 @@ python app.py
 ### Email Notification
 <img src="./images/screenshots/automatic_email_notification.PNG" alt="A screenshot of an automatic email notification from an alert.">
 
-### [Documentation Website](https://nikelausm.github.io/pricing-service/)) Built With [Sphinx](https://www.sphinx-doc.org/en/master/)
+### [Documentation Website](https://nikelausm.github.io/pricing-service/) Built With [Sphinx](https://www.sphinx-doc.org/en/master/)
 <img src="./images/screenshots/docs_website.PNG" alt="A screenshot of the documentation website.">
 
 ### Docs Website Example Page
@@ -90,7 +90,7 @@ python app.py
     - Templating language for Python, modelled after Django's templates.
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
     - A [WSGI](https://wsgi.readthedocs.io/en/latest/) web application library.
-- [UWSGI](https://uwsgi-docs.readthedocs.io/en/latest/)
+- [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/)
     - The application server.
 - [BeautifulSoup4 version 4.9.1](https://pypi.org/project/beautifulsoup4/)
     - Allows a web page to be scraped (parses its HTML or XML)
