@@ -30,7 +30,7 @@ Pricing Service is a Python Flask web application that allows you track items of
     - Alerts have a minimum price for their corresponding item.
     - If an alert's item drops below its minimum price, the user is notified by email.
     - Alert on user's alert list will indicate if an item has dropped below its minimum price with a visible message.
-    - User may edit Alerts
+    - User may edit Alerts.
 - Administrators may add new stores to the stores list.
 - [Extensive documentation website](https://nikelausm.github.io/pricing-service/) built with [Sphinx](https://www.sphinx-doc.org/en/master/).
 
