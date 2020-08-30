@@ -25,8 +25,8 @@ Pricing Service is a Python Flask web application that allows you track items of
     - Nike
     - EB Games
 - User can create/edit their profile.
-- User may view availale stores that they wish to track the items of.
-- User may track a desired item from an avaiable store by creating an Alert.
+- User may view available stores that they wish to track the items of.
+- User may track a desired item from an available store by creating an Alert.
     - Alerts have a minimum price for their corresponding item.
     - If an alert's item drops below its minimum price, the user is notified by email.
     - Alert on user's alert list will indicate if an item has dropped below its minimum price with a visible message.
