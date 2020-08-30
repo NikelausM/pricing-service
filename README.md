@@ -5,7 +5,6 @@
     <img src="./images/icons/jinja-logo.png" alt="Jinja icon." width="30%"  >
 </p>
 
-
 # Pricing Service
 
 ## Table of Contents
@@ -14,9 +13,12 @@
 - [Launch](#launch)
 - [Screenshots](#screenshots)
 - [Technologies](#technologies)
+- [Certificate](#certificate)
 
 ## Introduction
 Pricing Service is a Python Flask web application that allows you track items of online stores and be notified by email if the item has dropped below a user set minimum price.
+
+This web application was done as a capstone project for the Udemy course, [Complete Python Web Course: Build 8 Python Web Apps](https://www.udemy.com/course/the-complete-python-web-course-learn-by-building-8-apps/).
 
 ## Features
 - Scrapes e-commerce websites, including:
@@ -112,3 +114,6 @@ Sidenote: The website also used to be hosted using Nginx + uWSGI + Flask using [
     - Allows for logging information.
 - [time](https://docs.python.org/3/library/time.html)
     - For timing code execution time.
+
+## Certificate
+<img src="./images/Certificate of Completion.jpg" alt="The Certificate of Completion for the python flask course.">
